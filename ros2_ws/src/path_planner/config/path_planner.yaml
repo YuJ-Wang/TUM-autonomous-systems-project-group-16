@@ -1,0 +1,9 @@
+path_planner_node:
+  ros__parameters:
+    interpolation_points: 30
+    min_flight_altitude: 2.0
+    safety_radius_m: 1.0        # TODO: tune
+    astar_max_expansions: 120000 # TODO: tune
+    astar_search_margin_vox: 10  # TODO: tune
+    use_diagonal_moves: true
+    planner_method: "astar"

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>state_machine</name>
+  <version>0.0.1</version>
+  <description>Mission FSM (INIT→TAKEOFF→TO_CAVE_ENTRANCE→EXPLORE→RETURN_HOME→LAND→COMPLETE) for the Autonomous Systems 2025 project.</description>
+  <maintainer email="todo@example.com">TODO</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>utils</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,12 @@
+mission_state_machine_node:
+  ros__parameters:
+    takeoff_altitude: 10.0
+    cruise_altitude: 10.0
+    land_altitude: 0.4
+    arrival_tolerance: 5.0       # TODO: tune (must survive state-estimate jumps)
+    explore_timeout_s: 420.0     # TODO: tune
+    desired_lantern_count: 4
+    takeoff_timeout_s: 45.0      # TODO: tune
+    entrance_timeout_s: 120.0    # TODO: tune
+    entrance_waypoints: []       # TODO: fill with [x, y, z, yaw, ...]
+    explore_waypoints: []        # TODO: emergency fallback only

@@ -1,0 +1,16 @@
+object_detection_node:
+  ros__parameters:
+    mask_b: 4
+    mask_g: 235
+    mask_r: 255
+    tolerance: 10             # TODO: tune
+    min_depth_m: 0.1
+    max_depth_m: 25.0         # TODO: tune
+    dedup_radius_m: 8.0       # TODO: tune
+    min_points: 20            # TODO: tune
+
+depth_to_pointcloud_node:
+  ros__parameters:
+    use_semantic_mask: true
+    min_depth_m: 0.1
+    max_depth_m: 25.0
