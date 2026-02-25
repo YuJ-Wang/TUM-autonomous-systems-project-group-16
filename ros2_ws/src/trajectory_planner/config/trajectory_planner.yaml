@@ -1,4 +1,4 @@
-trajectory_generator_node:
+trajectory_planner_node:
   ros__parameters:
     desired_speed: 2.0        # TODO: tune
     min_segment_dt: 0.05

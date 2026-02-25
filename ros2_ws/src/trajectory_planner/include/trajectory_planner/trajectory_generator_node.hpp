@@ -8,9 +8,9 @@
 
 namespace trajectory_planner {
 
-class TrajectoryGeneratorNode : public rclcpp::Node {
+class TrajectoryPlannerNode : public rclcpp::Node {
 public:
-  TrajectoryGeneratorNode();
+  TrajectoryPlannerNode();
 
 private:
   void setup_interfaces();
