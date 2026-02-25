@@ -17,13 +17,13 @@ find_package(tf2_geometry_msgs REQUIRED)
 
 include_directories(include)
 
-add_executable(trajectory_generator_node src/trajectory_generator_node.cpp)
+add_executable(trajectory_planner_node src/trajectory_planner_node.cpp)
 ament_target_dependencies(
-  trajectory_generator_node
+  trajectory_planner_node
   rclcpp nav_msgs trajectory_msgs geometry_msgs std_msgs tf2 tf2_geometry_msgs
 )
 
-install(TARGETS trajectory_generator_node RUNTIME DESTINATION lib/${PROJECT_NAME})
+install(TARGETS trajectory_planner_node RUNTIME DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY include/ DESTINATION include)
 install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME})
 

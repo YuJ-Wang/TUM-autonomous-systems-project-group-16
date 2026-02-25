@@ -5,5 +5,5 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    # TODO: launch trajectory_generator_node with config
+    # TODO: launch trajectory_planner_node with config
     return LaunchDescription([])

@@ -34,10 +34,6 @@ install(TARGETS utils_node
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY include/
-  DESTINATION include
-)
-
 install(DIRECTORY launch config msg srv
   DESTINATION share/${PROJECT_NAME}
 )
