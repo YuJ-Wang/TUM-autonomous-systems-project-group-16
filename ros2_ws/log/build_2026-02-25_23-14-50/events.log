@@ -1,0 +1,588 @@
+[0.000000] (-) TimerEvent: {}
+[0.000489] (-) JobUnselected: {'identifier': 'controller_pkg'}
+[0.000842] (-) JobUnselected: {'identifier': 'mav_msgs'}
+[0.000908] (-) JobUnselected: {'identifier': 'mav_planning_msgs'}
+[0.000924] (-) JobUnselected: {'identifier': 'simulation'}
+[0.000946] (perception_pkg) JobQueued: {'identifier': 'perception_pkg', 'dependencies': OrderedDict()}
+[0.002768] (perception_pkg) JobStarted: {'identifier': 'perception_pkg'}
+[0.022237] (perception_pkg) JobProgress: {'identifier': 'perception_pkg', 'progress': 'cmake'}
+[0.023812] (perception_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg', '-DCMAKE_INSTALL_PREFIX=/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg'], 'cwd': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jiacheng', 'FONTCONFIG_PATH': '/etc/fonts', 'GIO_MODULE_DIR': '/home/jiacheng/snap/code/common/.cache/gio-modules', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/snap/code/220/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'GTK_EXE_PREFIX_VSCODE_SNAP_ORIG': '', 'GDK_BACKEND_VSCODE_SNAP_ORIG': '', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/jiacheng', 'CHROME_DESKTOP': 'code.desktop', 'LOCPATH_VSCODE_SNAP_ORIG': '', 'OLDPWD': '/home/jiacheng/autonomoussystems2025', 'TERM_PROGRAM_VERSION': '1.108.2', 'DESKTOP_SESSION': 'ubuntu', 'GTK_PATH': '/snap/code/220/usr/lib/x86_64-linux-gnu/gtk-3.0', 'XDG_DATA_HOME_VSCODE_SNAP_ORIG': '', 'GTK_IM_MODULE_FILE': '/home/jiacheng/snap/code/common/.cache/immodules/immodules.cache', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SDL_IM_MODULE': 'fcitx', 'GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG': '', 'VSCODE_GIT_ASKPASS_MAIN': '/snap/code/220/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/snap/code/220/usr/share/code/code', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2157', 'BUNDLED_DEBUGPY_PATH': '/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=f8d708a8ed38be658c1cd3d2699f5fd6', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'jiacheng', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'XDG_DATA_DIRS_VSCODE_SNAP_ORIG': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'USERNAME': 'jiacheng', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'HISTCONTROL': 'ignorespace', 'PATH': '/home/jiacheng/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/jiacheng/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/ros/jazzy/bin:/home/jiacheng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/jiacheng-VMware-Virtual-Platform:@/tmp/.ICE-unix/2157,unix/jiacheng-VMware-Virtual-Platform:/tmp/.ICE-unix/2157', 'GTK_EXE_PREFIX': '/snap/code/220/usr', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/357ca4da_2406_45be_b9d1_2eea9d0ec27f', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LOCPATH': '/snap/code/220/usr/lib/locale', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2455b87b63add1ef.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/jiacheng/.config/Code/User/workspaceStorage/4f8e66b4b5b24aa4c2eff4f48aff7919/ms-python.python/pythonrc.py', 'GIO_MODULE_DIR_VSCODE_SNAP_ORIG': '', 'XDG_DATA_HOME': '/home/jiacheng/snap/code/220/.local/share', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.O7UYK3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-009a50305f.sock', 'GNOME_TERMINAL_SERVICE': ':1.117', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/jiacheng/snap/code/220/.local/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GTK_PATH_VSCODE_SNAP_ORIG': '', 'FONTCONFIG_FILE': '/etc/fonts/fonts.conf', 'GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG': '', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'xim', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=f8d708a8ed38be658c1cd3d2699f5fd6', 'XDG_DATA_DIRS': '/home/jiacheng/snap/code/220/.local/share:/home/jiacheng/snap/code/220:/snap/code/220/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099948] (-) TimerEvent: {}
+[0.201449] (-) TimerEvent: {}
+[0.208856] (perception_pkg) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.302098] (-) TimerEvent: {}
+[0.370540] (perception_pkg) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.402744] (-) TimerEvent: {}
+[0.433939] (perception_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.503154] (-) TimerEvent: {}
+[0.604428] (-) TimerEvent: {}
+[0.699250] (perception_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.705072] (-) TimerEvent: {}
+[0.709431] (perception_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.711446] (perception_pkg) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.712567] (perception_pkg) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.742878] (perception_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.806007] (-) TimerEvent: {}
+[0.907314] (-) TimerEvent: {}
+[1.003642] (perception_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.007611] (-) TimerEvent: {}
+[1.014764] (perception_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.015729] (perception_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.015910] (perception_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.028802] (perception_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.109089] (-) TimerEvent: {}
+[1.210417] (-) TimerEvent: {}
+[1.311415] (-) TimerEvent: {}
+[1.378965] (perception_pkg) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.412231] (-) TimerEvent: {}
+[1.514838] (-) TimerEvent: {}
+[1.617829] (-) TimerEvent: {}
+[1.680503] (perception_pkg) StdoutLine: {'line': b'-- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[1.718326] (-) TimerEvent: {}
+[1.810495] (perception_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[1.818564] (-) TimerEvent: {}
+[1.843148] (perception_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[1.894862] (perception_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.918885] (-) TimerEvent: {}
+[1.946494] (perception_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.019149] (-) TimerEvent: {}
+[2.121092] (-) TimerEvent: {}
+[2.148491] (perception_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.156945] (perception_pkg) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.221574] (-) TimerEvent: {}
+[2.322876] (-) TimerEvent: {}
+[2.424012] (-) TimerEvent: {}
+[2.429812] (perception_pkg) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[2.485407] (perception_pkg) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[2.524708] (-) TimerEvent: {}
+[2.542149] (perception_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.625225] (-) TimerEvent: {}
+[2.726423] (-) TimerEvent: {}
+[2.748998] (perception_pkg) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[2.827108] (-) TimerEvent: {}
+[2.907422] (perception_pkg) StdoutLine: {'line': b'-- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)\n'}
+[2.927668] (-) TimerEvent: {}
+[2.967714] (perception_pkg) StdoutLine: {'line': b'-- Found octomap_msgs: 2.0.1 (/opt/ros/jazzy/share/octomap_msgs/cmake)\n'}
+[3.022070] (perception_pkg) StdoutLine: {'line': b'-- Found tf2_ros: 0.36.16 (/opt/ros/jazzy/share/tf2_ros/cmake)\n'}
+[3.028201] (-) TimerEvent: {}
+[3.131044] (-) TimerEvent: {}
+[3.233118] (-) TimerEvent: {}
+[3.334359] (-) TimerEvent: {}
+[3.379093] (perception_pkg) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.16 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[3.408815] (perception_pkg) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[3.414527] (perception_pkg) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[3.416351] (perception_pkg) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[3.422261] (perception_pkg) StdoutLine: {'line': b'-- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)\n'}
+[3.435203] (-) TimerEvent: {}
+[3.504939] (perception_pkg) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.535607] (-) TimerEvent: {}
+[3.637304] (-) TimerEvent: {}
+[3.740176] (-) TimerEvent: {}
+[3.842340] (perception_pkg) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[3.842831] (-) TimerEvent: {}
+[3.848430] (perception_pkg) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.849108] (perception_pkg) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/include>\n'}
+[3.849427] (perception_pkg) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.855689] (perception_pkg) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[3.856472] (perception_pkg) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[3.860715] (perception_pkg) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[3.861292] (perception_pkg) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[3.865810] (perception_pkg) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.867653] (perception_pkg) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[3.871740] (perception_pkg) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.872196] (perception_pkg) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.873741] (perception_pkg) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.883390] (perception_pkg) StdoutLine: {'line': b'-- Configuring done (3.8s)\n'}
+[3.943676] (-) TimerEvent: {}
+[3.956975] (perception_pkg) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[3.973481] (perception_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg\n'}
+[4.035467] (perception_pkg) CommandEnded: {'returncode': 0}
+[4.035988] (perception_pkg) JobProgress: {'identifier': 'perception_pkg', 'progress': 'build'}
+[4.036017] (perception_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', '--', '-j8', '-l8'], 'cwd': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jiacheng', 'FONTCONFIG_PATH': '/etc/fonts', 'GIO_MODULE_DIR': '/home/jiacheng/snap/code/common/.cache/gio-modules', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/snap/code/220/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'GTK_EXE_PREFIX_VSCODE_SNAP_ORIG': '', 'GDK_BACKEND_VSCODE_SNAP_ORIG': '', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/jiacheng', 'CHROME_DESKTOP': 'code.desktop', 'LOCPATH_VSCODE_SNAP_ORIG': '', 'OLDPWD': '/home/jiacheng/autonomoussystems2025', 'TERM_PROGRAM_VERSION': '1.108.2', 'DESKTOP_SESSION': 'ubuntu', 'GTK_PATH': '/snap/code/220/usr/lib/x86_64-linux-gnu/gtk-3.0', 'XDG_DATA_HOME_VSCODE_SNAP_ORIG': '', 'GTK_IM_MODULE_FILE': '/home/jiacheng/snap/code/common/.cache/immodules/immodules.cache', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SDL_IM_MODULE': 'fcitx', 'GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG': '', 'VSCODE_GIT_ASKPASS_MAIN': '/snap/code/220/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/snap/code/220/usr/share/code/code', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2157', 'BUNDLED_DEBUGPY_PATH': '/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=f8d708a8ed38be658c1cd3d2699f5fd6', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'jiacheng', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'XDG_DATA_DIRS_VSCODE_SNAP_ORIG': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'USERNAME': 'jiacheng', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'HISTCONTROL': 'ignorespace', 'PATH': '/home/jiacheng/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/jiacheng/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/ros/jazzy/bin:/home/jiacheng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/jiacheng-VMware-Virtual-Platform:@/tmp/.ICE-unix/2157,unix/jiacheng-VMware-Virtual-Platform:/tmp/.ICE-unix/2157', 'GTK_EXE_PREFIX': '/snap/code/220/usr', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/357ca4da_2406_45be_b9d1_2eea9d0ec27f', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LOCPATH': '/snap/code/220/usr/lib/locale', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2455b87b63add1ef.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/jiacheng/.config/Code/User/workspaceStorage/4f8e66b4b5b24aa4c2eff4f48aff7919/ms-python.python/pythonrc.py', 'GIO_MODULE_DIR_VSCODE_SNAP_ORIG': '', 'XDG_DATA_HOME': '/home/jiacheng/snap/code/220/.local/share', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.O7UYK3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-009a50305f.sock', 'GNOME_TERMINAL_SERVICE': ':1.117', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/jiacheng/snap/code/220/.local/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GTK_PATH_VSCODE_SNAP_ORIG': '', 'FONTCONFIG_FILE': '/etc/fonts/fonts.conf', 'GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG': '', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'xim', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=f8d708a8ed38be658c1cd3d2699f5fd6', 'XDG_DATA_DIRS': '/home/jiacheng/snap/code/220/.local/share:/home/jiacheng/snap/code/220:/snap/code/220/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[4.045389] (-) TimerEvent: {}
+[4.146656] (-) TimerEvent: {}
+[4.227552] (perception_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/depth_to_pointcloud.dir/src/depth_to_pointcloud.cpp.o\x1b[0m\n'}
+[4.228221] (perception_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pointcloud_to_octomap.dir/src/pointcloud_to_octomap.cpp.o\x1b[0m\n'}
+[4.228295] (perception_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o\x1b[0m\n'}
+[4.247936] (-) TimerEvent: {}
+[4.350245] (-) TimerEvent: {}
+[4.455479] (-) TimerEvent: {}
+[4.559861] (-) TimerEvent: {}
+[4.662911] (-) TimerEvent: {}
+[4.764713] (-) TimerEvent: {}
+[4.866337] (-) TimerEvent: {}
+[4.967523] (-) TimerEvent: {}
+[5.069139] (-) TimerEvent: {}
+[5.170031] (-) TimerEvent: {}
+[5.271216] (-) TimerEvent: {}
+[5.371786] (-) TimerEvent: {}
+[5.472528] (-) TimerEvent: {}
+[5.573659] (-) TimerEvent: {}
+[5.675460] (-) TimerEvent: {}
+[5.780906] (-) TimerEvent: {}
+[5.882062] (-) TimerEvent: {}
+[5.984988] (-) TimerEvent: {}
+[6.086289] (-) TimerEvent: {}
+[6.189064] (-) TimerEvent: {}
+[6.289926] (-) TimerEvent: {}
+[6.391615] (-) TimerEvent: {}
+[6.495474] (-) TimerEvent: {}
+[6.597701] (-) TimerEvent: {}
+[6.702154] (-) TimerEvent: {}
+[6.806436] (-) TimerEvent: {}
+[6.908549] (-) TimerEvent: {}
+[7.013892] (-) TimerEvent: {}
+[7.115319] (-) TimerEvent: {}
+[7.216458] (-) TimerEvent: {}
+[7.317945] (-) TimerEvent: {}
+[7.421005] (-) TimerEvent: {}
+[7.524633] (-) TimerEvent: {}
+[7.628198] (-) TimerEvent: {}
+[7.731956] (-) TimerEvent: {}
+[7.834529] (-) TimerEvent: {}
+[7.939423] (-) TimerEvent: {}
+[8.040315] (-) TimerEvent: {}
+[8.142690] (-) TimerEvent: {}
+[8.244790] (-) TimerEvent: {}
+[8.346535] (-) TimerEvent: {}
+[8.449446] (-) TimerEvent: {}
+[8.550401] (-) TimerEvent: {}
+[8.652783] (-) TimerEvent: {}
+[8.755547] (-) TimerEvent: {}
+[8.859101] (-) TimerEvent: {}
+[8.959891] (-) TimerEvent: {}
+[9.061776] (-) TimerEvent: {}
+[9.163855] (-) TimerEvent: {}
+[9.265044] (-) TimerEvent: {}
+[9.366220] (-) TimerEvent: {}
+[9.468634] (-) TimerEvent: {}
+[9.569765] (-) TimerEvent: {}
+[9.670995] (-) TimerEvent: {}
+[9.772080] (-) TimerEvent: {}
+[9.875437] (-) TimerEvent: {}
+[9.979953] (-) TimerEvent: {}
+[10.081482] (-) TimerEvent: {}
+[10.184750] (-) TimerEvent: {}
+[10.285868] (-) TimerEvent: {}
+[10.386719] (-) TimerEvent: {}
+[10.488194] (-) TimerEvent: {}
+[10.590107] (-) TimerEvent: {}
+[10.692410] (-) TimerEvent: {}
+[10.795460] (-) TimerEvent: {}
+[10.896740] (-) TimerEvent: {}
+[10.997882] (-) TimerEvent: {}
+[11.098945] (-) TimerEvent: {}
+[11.201177] (-) TimerEvent: {}
+[11.303131] (-) TimerEvent: {}
+[11.404381] (-) TimerEvent: {}
+[11.505973] (-) TimerEvent: {}
+[11.607340] (-) TimerEvent: {}
+[11.708311] (-) TimerEvent: {}
+[11.809471] (-) TimerEvent: {}
+[11.911190] (-) TimerEvent: {}
+[12.014573] (-) TimerEvent: {}
+[12.116478] (-) TimerEvent: {}
+[12.219041] (-) TimerEvent: {}
+[12.326564] (-) TimerEvent: {}
+[12.336560] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:328:2:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[12.337002] (perception_pkg) StderrLine: {'line': b'  328 | }\n'}
+[12.337327] (perception_pkg) StderrLine: {'line': b'      |  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[12.337380] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:26:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[12.337427] (perception_pkg) StderrLine: {'line': b'   26 | \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[12.337479] (perception_pkg) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[12.371735] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KLanternDetectorNode::\x1b[01;32m\x1b[KLanternDetectorNode\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[12.372192] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:40:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksemantic_topic_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.372256] (perception_pkg) StderrLine: {'line': b'   40 |         \x1b[01;31m\x1b[Ksemantic_topic_\x1b[m\x1b[K = this->get_parameter("semantic_topic").as_string();\n'}
+[12.372375] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.396239] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:41:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdepth_topic_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.396581] (perception_pkg) StderrLine: {'line': b'   41 |         \x1b[01;31m\x1b[Kdepth_topic_\x1b[m\x1b[K = this->get_parameter("depth_topic").as_string();\n'}
+[12.396856] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.419512] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:42:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kworld_frame_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.419864] (perception_pkg) StderrLine: {'line': b'   42 |         \x1b[01;31m\x1b[Kworld_frame_\x1b[m\x1b[K = this->get_parameter("world_frame").as_string();\n'}
+[12.419953] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.424275] (-) TimerEvent: {}
+[12.450570] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:43:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmerge_threshold_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.451192] (perception_pkg) StderrLine: {'line': b'   43 |         \x1b[01;31m\x1b[Kmerge_threshold_\x1b[m\x1b[K = this->get_parameter("merge_threshold").as_double();\n'}
+[12.451500] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.478455] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:44:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmin_depth_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.478871] (perception_pkg) StderrLine: {'line': b'   44 |         \x1b[01;31m\x1b[Kmin_depth_\x1b[m\x1b[K = this->get_parameter("min_depth").as_double();\n'}
+[12.478952] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.502136] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:45:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmax_depth_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.502654] (perception_pkg) StderrLine: {'line': b'   45 |         \x1b[01;31m\x1b[Kmax_depth_\x1b[m\x1b[K = this->get_parameter("max_depth").as_double();\n'}
+[12.502740] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.523413] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:48:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktf_buffer_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.523955] (perception_pkg) StderrLine: {'line': b'   48 |         \x1b[01;31m\x1b[Ktf_buffer_\x1b[m\x1b[K = std::make_shared<tf2_ros::Buffer>(this->get_clock());\n'}
+[12.524038] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.524333] (-) TimerEvent: {}
+[12.555242] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:49:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktf_listener_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.555697] (perception_pkg) StderrLine: {'line': b'   49 |         \x1b[01;31m\x1b[Ktf_listener_\x1b[m\x1b[K = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);\n'}
+[12.555780] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.584194] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:52:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdepth_info_sub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.584768] (perception_pkg) StderrLine: {'line': b'   52 |         \x1b[01;31m\x1b[Kdepth_info_sub_\x1b[m\x1b[K = this->create_subscription<sensor_msgs::msg::CameraInfo>(\n'}
+[12.584855] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.624884] (-) TimerEvent: {}
+[12.670752] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:58:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksemantic_sub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.672016] (perception_pkg) StderrLine: {'line': b'   58 |         \x1b[01;31m\x1b[Ksemantic_sub_\x1b[m\x1b[K.subscribe(this, semantic_topic_, rmw_qos_profile_sensor_data);\n'}
+[12.672082] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.706525] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:59:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdepth_sub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.707148] (perception_pkg) StderrLine: {'line': b'   59 |         \x1b[01;31m\x1b[Kdepth_sub_\x1b[m\x1b[K.subscribe(this, depth_topic_, rmw_qos_profile_sensor_data);\n'}
+[12.707230] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.725370] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:62:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksync_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Ksync\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[12.726167] (-) TimerEvent: {}
+[12.727156] (perception_pkg) StderrLine: {'line': b'   62 |         \x1b[01;31m\x1b[Ksync_\x1b[m\x1b[K = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(\n'}
+[12.727407] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[12.727468] (perception_pkg) StderrLine: {'line': b'      |         \x1b[32m\x1b[Ksync\x1b[m\x1b[K\n'}
+[12.827070] (-) TimerEvent: {}
+[12.858952] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:69:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Klantern_pub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.859446] (perception_pkg) StderrLine: {'line': b'   69 |         \x1b[01;31m\x1b[Klantern_pub_\x1b[m\x1b[K = this->create_publisher<geometry_msgs::msg::PoseArray>("/detected_lanterns", 10);\n'}
+[12.859520] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.889441] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:70:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmarker_pub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[12.890038] (perception_pkg) StderrLine: {'line': b'   70 |         \x1b[01;31m\x1b[Kmarker_pub_\x1b[m\x1b[K = this->create_publisher<visualization_msgs::msg::MarkerArray>("/lantern_markers", 10);\n'}
+[12.890132] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[12.927706] (-) TimerEvent: {}
+[13.028853] (-) TimerEvent: {}
+[13.129381] (-) TimerEvent: {}
+[13.230414] (-) TimerEvent: {}
+[13.332037] (-) TimerEvent: {}
+[13.436299] (-) TimerEvent: {}
+[13.537542] (-) TimerEvent: {}
+[13.638261] (-) TimerEvent: {}
+[13.739173] (-) TimerEvent: {}
+[13.840030] (-) TimerEvent: {}
+[13.941248] (-) TimerEvent: {}
+[14.042140] (-) TimerEvent: {}
+[14.143500] (-) TimerEvent: {}
+[14.245062] (-) TimerEvent: {}
+[14.337341] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LanternDetectorNode::\x1b[01;32m\x1b[KdepthInfoCallback\x1b[m\x1b[K(sensor_msgs::msg::CameraInfo_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[14.337906] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:82:14:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdepth_info_received_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[14.337981] (perception_pkg) StderrLine: {'line': b'   82 |         if (!\x1b[01;31m\x1b[Kdepth_info_received_\x1b[m\x1b[K) {\n'}
+[14.338030] (perception_pkg) StderrLine: {'line': b'      |              \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[14.346101] (-) TimerEvent: {}
+[14.359846] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:84:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kfx_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[14.360150] (perception_pkg) StderrLine: {'line': b'   84 |             \x1b[01;31m\x1b[Kfx_\x1b[m\x1b[K = (msg->k[0] != 0.0) ? msg->k[0] : msg->p[0];\n'}
+[14.360211] (perception_pkg) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[14.387102] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:85:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kfy_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[14.387549] (perception_pkg) StderrLine: {'line': b'   85 |             \x1b[01;31m\x1b[Kfy_\x1b[m\x1b[K = (msg->k[4] != 0.0) ? msg->k[4] : msg->p[5];\n'}
+[14.387759] (perception_pkg) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[14.407940] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:86:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcx_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[14.408228] (perception_pkg) StderrLine: {'line': b'   86 |             \x1b[01;31m\x1b[Kcx_\x1b[m\x1b[K = (msg->k[2] != 0.0) ? msg->k[2] : msg->p[2];\n'}
+[14.408342] (perception_pkg) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[14.424805] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:87:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcy_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[14.425373] (perception_pkg) StderrLine: {'line': b'   87 |             \x1b[01;31m\x1b[Kcy_\x1b[m\x1b[K = (msg->k[5] != 0.0) ? msg->k[5] : msg->p[6];\n'}
+[14.425461] (perception_pkg) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[14.447217] (-) TimerEvent: {}
+[14.457604] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:88:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdepth_frame_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[14.458098] (perception_pkg) StderrLine: {'line': b'   88 |             \x1b[01;31m\x1b[Kdepth_frame_\x1b[m\x1b[K = msg->header.frame_id;\n'}
+[14.458171] (perception_pkg) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[14.458241] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LanternDetectorNode::\x1b[01;32m\x1b[KsyncCallback\x1b[m\x1b[K(const sensor_msgs::msg::Image_<std::allocator<void> >::ConstSharedPtr&, const sensor_msgs::msg::Image_<std::allocator<void> >::ConstSharedPtr&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[14.458312] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:100:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[14.458395] (perception_pkg) StderrLine: {'line': b'  100 |         \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K sensor_msgs::msg::Image::ConstSharedPtr& semantic_msg,\n'}
+[14.458443] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[14.458490] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:101:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[14.458536] (perception_pkg) StderrLine: {'line': b'  101 |         \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K sensor_msgs::msg::Image::ConstSharedPtr& depth_msg)\n'}
+[14.458591] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[14.483878] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:99:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KisyncCallback\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[KsyncCallback\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[14.484664] (perception_pkg) StderrLine: {'line': b'   99 |         \x1b[01;31m\x1b[KisyncCallback\x1b[m\x1b[K(\n'}
+[14.485188] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[14.485777] (perception_pkg) StderrLine: {'line': b'      |         \x1b[32m\x1b[KsyncCallback\x1b[m\x1b[K\n'}
+[14.485890] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:168:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ka function-definition is not allowed here before \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[14.485954] (perception_pkg) StderrLine: {'line': b'  168 |     \x1b[01;31m\x1b[K{\x1b[m\x1b[K\n'}
+[14.486005] (perception_pkg) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[14.486065] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:214:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ka function-definition is not allowed here before \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[14.486129] (perception_pkg) StderrLine: {'line': b'  214 |     \x1b[01;31m\x1b[K{\x1b[m\x1b[K\n'}
+[14.486192] (perception_pkg) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[14.486258] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:251:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ka function-definition is not allowed here before \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[14.486745] (perception_pkg) StderrLine: {'line': b'  251 |     \x1b[01;31m\x1b[K{\x1b[m\x1b[K\n'}
+[14.486803] (perception_pkg) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[14.486850] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:328:2:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[14.487000] (perception_pkg) StderrLine: {'line': b'  328 | }\n'}
+[14.487053] (perception_pkg) StderrLine: {'line': b'      |  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[14.487101] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:98:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[14.487150] (perception_pkg) StderrLine: {'line': b'   98 |     \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[14.487219] (perception_pkg) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[14.487259] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:96:56:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksemantic_msg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[14.487309] (perception_pkg) StderrLine: {'line': b'   96 |         \x1b[01;35m\x1b[Kconst sensor_msgs::msg::Image::ConstSharedPtr& semantic_msg\x1b[m\x1b[K,\n'}
+[14.487353] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[14.487394] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:97:56:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdepth_msg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[14.487440] (perception_pkg) StderrLine: {'line': b'   97 |         \x1b[01;35m\x1b[Kconst sensor_msgs::msg::Image::ConstSharedPtr& depth_msg\x1b[m\x1b[K)\n'}
+[14.487674] (perception_pkg) StderrLine: {'line': b'      |         \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[14.487756] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:\x1b[m\x1b[K At global scope:\n'}
+[14.487812] (perception_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:328:2:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id at end of input\n'}
+[14.487864] (perception_pkg) StderrLine: {'line': b'  328 | }\n'}
+[14.487910] (perception_pkg) StderrLine: {'line': b'      |  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[14.547639] (-) TimerEvent: {}
+[14.651086] (-) TimerEvent: {}
+[14.753077] (-) TimerEvent: {}
+[14.854980] (-) TimerEvent: {}
+[14.957897] (-) TimerEvent: {}
+[15.060026] (-) TimerEvent: {}
+[15.163072] (-) TimerEvent: {}
+[15.268211] (-) TimerEvent: {}
+[15.368792] (-) TimerEvent: {}
+[15.470126] (-) TimerEvent: {}
+[15.572536] (-) TimerEvent: {}
+[15.676963] (-) TimerEvent: {}
+[15.777869] (-) TimerEvent: {}
+[15.880007] (-) TimerEvent: {}
+[15.981866] (-) TimerEvent: {}
+[16.083434] (-) TimerEvent: {}
+[16.184767] (-) TimerEvent: {}
+[16.288160] (-) TimerEvent: {}
+[16.391834] (-) TimerEvent: {}
+[16.496076] (-) TimerEvent: {}
+[16.597370] (-) TimerEvent: {}
+[16.699183] (-) TimerEvent: {}
+[16.801152] (-) TimerEvent: {}
+[16.902806] (-) TimerEvent: {}
+[17.005016] (-) TimerEvent: {}
+[17.107088] (-) TimerEvent: {}
+[17.208836] (-) TimerEvent: {}
+[17.309618] (-) TimerEvent: {}
+[17.410623] (-) TimerEvent: {}
+[17.511981] (-) TimerEvent: {}
+[17.613636] (-) TimerEvent: {}
+[17.719767] (-) TimerEvent: {}
+[17.825441] (-) TimerEvent: {}
+[17.926965] (-) TimerEvent: {}
+[18.028056] (-) TimerEvent: {}
+[18.128643] (-) TimerEvent: {}
+[18.229897] (-) TimerEvent: {}
+[18.332068] (-) TimerEvent: {}
+[18.433016] (-) TimerEvent: {}
+[18.537041] (-) TimerEvent: {}
+[18.638142] (-) TimerEvent: {}
+[18.738919] (-) TimerEvent: {}
+[18.840150] (-) TimerEvent: {}
+[18.942830] (-) TimerEvent: {}
+[19.045434] (-) TimerEvent: {}
+[19.146893] (-) TimerEvent: {}
+[19.248127] (-) TimerEvent: {}
+[19.349053] (-) TimerEvent: {}
+[19.450962] (-) TimerEvent: {}
+[19.552161] (-) TimerEvent: {}
+[19.657127] (-) TimerEvent: {}
+[19.758209] (-) TimerEvent: {}
+[19.859869] (-) TimerEvent: {}
+[19.960970] (-) TimerEvent: {}
+[20.061946] (-) TimerEvent: {}
+[20.163837] (-) TimerEvent: {}
+[20.266844] (-) TimerEvent: {}
+[20.371571] (-) TimerEvent: {}
+[20.472140] (-) TimerEvent: {}
+[20.575176] (-) TimerEvent: {}
+[20.676342] (-) TimerEvent: {}
+[20.777286] (-) TimerEvent: {}
+[20.826467] (perception_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/lantern_detector.dir/build.make:76: CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o] Error 1\n'}
+[20.827694] (perception_pkg) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/lantern_detector.dir/all] Error 2\n'}
+[20.827847] (perception_pkg) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[20.877644] (-) TimerEvent: {}
+[20.978720] (-) TimerEvent: {}
+[21.079739] (-) TimerEvent: {}
+[21.181207] (-) TimerEvent: {}
+[21.282786] (-) TimerEvent: {}
+[21.383733] (-) TimerEvent: {}
+[21.484878] (-) TimerEvent: {}
+[21.586557] (-) TimerEvent: {}
+[21.688359] (-) TimerEvent: {}
+[21.789139] (-) TimerEvent: {}
+[21.893335] (-) TimerEvent: {}
+[21.995916] (-) TimerEvent: {}
+[22.099744] (-) TimerEvent: {}
+[22.201103] (-) TimerEvent: {}
+[22.303465] (-) TimerEvent: {}
+[22.407678] (-) TimerEvent: {}
+[22.509489] (-) TimerEvent: {}
+[22.614314] (-) TimerEvent: {}
+[22.715713] (-) TimerEvent: {}
+[22.820059] (-) TimerEvent: {}
+[22.921214] (-) TimerEvent: {}
+[23.023226] (-) TimerEvent: {}
+[23.124843] (-) TimerEvent: {}
+[23.226025] (-) TimerEvent: {}
+[23.327043] (-) TimerEvent: {}
+[23.428031] (-) TimerEvent: {}
+[23.530843] (-) TimerEvent: {}
+[23.632287] (-) TimerEvent: {}
+[23.733414] (-) TimerEvent: {}
+[23.834209] (-) TimerEvent: {}
+[23.938114] (-) TimerEvent: {}
+[24.042258] (-) TimerEvent: {}
+[24.142843] (-) TimerEvent: {}
+[24.245971] (-) TimerEvent: {}
+[24.346752] (-) TimerEvent: {}
+[24.449123] (-) TimerEvent: {}
+[24.551388] (-) TimerEvent: {}
+[24.653361] (-) TimerEvent: {}
+[24.754885] (-) TimerEvent: {}
+[24.857352] (-) TimerEvent: {}
+[24.959016] (-) TimerEvent: {}
+[25.060848] (-) TimerEvent: {}
+[25.162566] (-) TimerEvent: {}
+[25.264172] (-) TimerEvent: {}
+[25.365218] (-) TimerEvent: {}
+[25.466993] (-) TimerEvent: {}
+[25.568159] (-) TimerEvent: {}
+[25.670122] (-) TimerEvent: {}
+[25.770864] (-) TimerEvent: {}
+[25.873327] (-) TimerEvent: {}
+[25.974442] (-) TimerEvent: {}
+[26.075639] (-) TimerEvent: {}
+[26.178092] (-) TimerEvent: {}
+[26.278811] (-) TimerEvent: {}
+[26.379536] (-) TimerEvent: {}
+[26.480792] (-) TimerEvent: {}
+[26.583066] (-) TimerEvent: {}
+[26.686302] (-) TimerEvent: {}
+[26.789433] (-) TimerEvent: {}
+[26.891128] (-) TimerEvent: {}
+[26.992379] (-) TimerEvent: {}
+[27.093286] (-) TimerEvent: {}
+[27.196182] (-) TimerEvent: {}
+[27.299429] (-) TimerEvent: {}
+[27.400779] (-) TimerEvent: {}
+[27.503252] (-) TimerEvent: {}
+[27.605791] (-) TimerEvent: {}
+[27.707421] (-) TimerEvent: {}
+[27.809914] (-) TimerEvent: {}
+[27.911043] (-) TimerEvent: {}
+[28.013105] (-) TimerEvent: {}
+[28.113867] (-) TimerEvent: {}
+[28.215196] (-) TimerEvent: {}
+[28.316818] (-) TimerEvent: {}
+[28.417621] (-) TimerEvent: {}
+[28.520049] (-) TimerEvent: {}
+[28.621062] (-) TimerEvent: {}
+[28.723699] (-) TimerEvent: {}
+[28.828423] (-) TimerEvent: {}
+[28.929731] (-) TimerEvent: {}
+[29.030968] (-) TimerEvent: {}
+[29.132824] (-) TimerEvent: {}
+[29.234510] (-) TimerEvent: {}
+[29.336071] (-) TimerEvent: {}
+[29.439318] (-) TimerEvent: {}
+[29.540589] (-) TimerEvent: {}
+[29.642676] (-) TimerEvent: {}
+[29.744703] (-) TimerEvent: {}
+[29.846101] (-) TimerEvent: {}
+[29.949966] (-) TimerEvent: {}
+[30.051942] (-) TimerEvent: {}
+[30.154688] (-) TimerEvent: {}
+[30.256661] (-) TimerEvent: {}
+[30.359080] (-) TimerEvent: {}
+[30.461938] (-) TimerEvent: {}
+[30.563847] (-) TimerEvent: {}
+[30.665907] (-) TimerEvent: {}
+[30.768733] (-) TimerEvent: {}
+[30.869941] (-) TimerEvent: {}
+[30.971768] (-) TimerEvent: {}
+[31.073449] (-) TimerEvent: {}
+[31.174482] (-) TimerEvent: {}
+[31.276202] (-) TimerEvent: {}
+[31.377197] (-) TimerEvent: {}
+[31.478734] (-) TimerEvent: {}
+[31.581614] (-) TimerEvent: {}
+[31.683821] (-) TimerEvent: {}
+[31.786243] (-) TimerEvent: {}
+[31.888749] (-) TimerEvent: {}
+[31.991788] (-) TimerEvent: {}
+[32.092914] (-) TimerEvent: {}
+[32.194159] (-) TimerEvent: {}
+[32.295209] (-) TimerEvent: {}
+[32.398033] (-) TimerEvent: {}
+[32.499935] (-) TimerEvent: {}
+[32.602490] (-) TimerEvent: {}
+[32.703972] (-) TimerEvent: {}
+[32.808718] (-) TimerEvent: {}
+[32.910063] (-) TimerEvent: {}
+[33.015582] (-) TimerEvent: {}
+[33.118011] (-) TimerEvent: {}
+[33.218931] (-) TimerEvent: {}
+[33.319952] (-) TimerEvent: {}
+[33.422285] (-) TimerEvent: {}
+[33.523837] (-) TimerEvent: {}
+[33.625068] (-) TimerEvent: {}
+[33.726247] (-) TimerEvent: {}
+[33.829479] (-) TimerEvent: {}
+[33.930732] (-) TimerEvent: {}
+[34.031658] (-) TimerEvent: {}
+[34.132474] (-) TimerEvent: {}
+[34.233384] (-) TimerEvent: {}
+[34.334996] (-) TimerEvent: {}
+[34.436077] (-) TimerEvent: {}
+[34.539087] (-) TimerEvent: {}
+[34.594855] (perception_pkg) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable pointcloud_to_octomap\x1b[0m\n'}
+[34.639832] (-) TimerEvent: {}
+[34.743190] (-) TimerEvent: {}
+[34.843961] (-) TimerEvent: {}
+[34.947953] (-) TimerEvent: {}
+[35.049011] (-) TimerEvent: {}
+[35.152700] (-) TimerEvent: {}
+[35.253391] (-) TimerEvent: {}
+[35.354501] (-) TimerEvent: {}
+[35.456040] (-) TimerEvent: {}
+[35.557114] (-) TimerEvent: {}
+[35.658334] (-) TimerEvent: {}
+[35.759215] (-) TimerEvent: {}
+[35.860622] (-) TimerEvent: {}
+[35.961944] (-) TimerEvent: {}
+[36.066323] (-) TimerEvent: {}
+[36.167054] (-) TimerEvent: {}
+[36.267975] (-) TimerEvent: {}
+[36.370037] (-) TimerEvent: {}
+[36.438330] (perception_pkg) StdoutLine: {'line': b'[ 66%] Built target pointcloud_to_octomap\n'}
+[36.470749] (-) TimerEvent: {}
+[36.572825] (-) TimerEvent: {}
+[36.676104] (-) TimerEvent: {}
+[36.777205] (-) TimerEvent: {}
+[36.879186] (-) TimerEvent: {}
+[36.983131] (-) TimerEvent: {}
+[37.085480] (-) TimerEvent: {}
+[37.187126] (-) TimerEvent: {}
+[37.288846] (-) TimerEvent: {}
+[37.390163] (-) TimerEvent: {}
+[37.491618] (-) TimerEvent: {}
+[37.593505] (-) TimerEvent: {}
+[37.696278] (-) TimerEvent: {}
+[37.797291] (-) TimerEvent: {}
+[37.900830] (-) TimerEvent: {}
+[38.002261] (-) TimerEvent: {}
+[38.103614] (-) TimerEvent: {}
+[38.204718] (-) TimerEvent: {}
+[38.305939] (-) TimerEvent: {}
+[38.407048] (-) TimerEvent: {}
+[38.508684] (-) TimerEvent: {}
+[38.610306] (-) TimerEvent: {}
+[38.711982] (-) TimerEvent: {}
+[38.813344] (-) TimerEvent: {}
+[38.915241] (-) TimerEvent: {}
+[39.016984] (-) TimerEvent: {}
+[39.121532] (-) TimerEvent: {}
+[39.219160] (perception_pkg) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable depth_to_pointcloud\x1b[0m\n'}
+[39.221785] (-) TimerEvent: {}
+[39.322473] (-) TimerEvent: {}
+[39.425183] (-) TimerEvent: {}
+[39.526409] (-) TimerEvent: {}
+[39.627368] (-) TimerEvent: {}
+[39.730216] (-) TimerEvent: {}
+[39.831373] (-) TimerEvent: {}
+[39.936225] (-) TimerEvent: {}
+[40.036967] (-) TimerEvent: {}
+[40.138905] (-) TimerEvent: {}
+[40.241730] (-) TimerEvent: {}
+[40.347035] (-) TimerEvent: {}
+[40.447865] (-) TimerEvent: {}
+[40.549199] (-) TimerEvent: {}
+[40.650203] (-) TimerEvent: {}
+[40.752302] (-) TimerEvent: {}
+[40.854328] (-) TimerEvent: {}
+[40.956441] (-) TimerEvent: {}
+[41.058450] (-) TimerEvent: {}
+[41.163033] (-) TimerEvent: {}
+[41.265226] (-) TimerEvent: {}
+[41.369293] (-) TimerEvent: {}
+[41.473483] (-) TimerEvent: {}
+[41.509539] (perception_pkg) StdoutLine: {'line': b'[ 83%] Built target depth_to_pointcloud\n'}
+[41.513626] (perception_pkg) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[41.522184] (perception_pkg) CommandEnded: {'returncode': 2}
+[41.552481] (perception_pkg) JobEnded: {'identifier': 'perception_pkg', 'rc': 2}
+[41.564363] (-) EventReactorShutdown: {}

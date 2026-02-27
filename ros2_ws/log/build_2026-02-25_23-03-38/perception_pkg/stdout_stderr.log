@@ -1,0 +1,111 @@
+[ 66%] Built target depth_to_pointcloud
+[ 66%] Built target pointcloud_to_octomap
+[ 83%] [32mBuilding CXX object CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o[0m
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:328:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  328 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:26:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   26 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:[m[K In constructor ‘[01m[KLanternDetectorNode::[01;32m[KLanternDetectorNode[m[K()[m[K’:
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:40:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksemantic_topic_[m[K’ was not declared in this scope
+   40 |         [01;31m[Ksemantic_topic_[m[K = this->get_parameter("semantic_topic").as_string();
+      |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:41:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_topic_[m[K’ was not declared in this scope
+   41 |         [01;31m[Kdepth_topic_[m[K = this->get_parameter("depth_topic").as_string();
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:42:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kworld_frame_[m[K’ was not declared in this scope
+   42 |         [01;31m[Kworld_frame_[m[K = this->get_parameter("world_frame").as_string();
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:43:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmerge_threshold_[m[K’ was not declared in this scope
+   43 |         [01;31m[Kmerge_threshold_[m[K = this->get_parameter("merge_threshold").as_double();
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:44:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmin_depth_[m[K’ was not declared in this scope
+   44 |         [01;31m[Kmin_depth_[m[K = this->get_parameter("min_depth").as_double();
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:45:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmax_depth_[m[K’ was not declared in this scope
+   45 |         [01;31m[Kmax_depth_[m[K = this->get_parameter("max_depth").as_double();
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:48:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_buffer_[m[K’ was not declared in this scope
+   48 |         [01;31m[Ktf_buffer_[m[K = std::make_shared<tf2_ros::Buffer>(this->get_clock());
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:49:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_listener_[m[K’ was not declared in this scope
+   49 |         [01;31m[Ktf_listener_[m[K = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:52:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_info_sub_[m[K’ was not declared in this scope
+   52 |         [01;31m[Kdepth_info_sub_[m[K = this->create_subscription<sensor_msgs::msg::CameraInfo>(
+      |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:58:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksemantic_sub_[m[K’ was not declared in this scope
+   58 |         [01;31m[Ksemantic_sub_[m[K.subscribe(this, semantic_topic_, rmw_qos_profile_sensor_data);
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:59:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_sub_[m[K’ was not declared in this scope
+   59 |         [01;31m[Kdepth_sub_[m[K.subscribe(this, depth_topic_, rmw_qos_profile_sensor_data);
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:62:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksync_[m[K’ was not declared in this scope; did you mean ‘[01m[Ksync[m[K’?
+   62 |         [01;31m[Ksync_[m[K = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(
+      |         [01;31m[K^~~~~[m[K
+      |         [32m[Ksync[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:69:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klantern_pub_[m[K’ was not declared in this scope
+   69 |         [01;31m[Klantern_pub_[m[K = this->create_publisher<geometry_msgs::msg::PoseArray>("/detected_lanterns", 10);
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:70:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_pub_[m[K’ was not declared in this scope
+   70 |         [01;31m[Kmarker_pub_[m[K = this->create_publisher<visualization_msgs::msg::MarkerArray>("/lantern_markers", 10);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:[m[K In member function ‘[01m[Kvoid LanternDetectorNode::[01;32m[KdepthInfoCallback[m[K(sensor_msgs::msg::CameraInfo_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:82:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_info_received_[m[K’ was not declared in this scope
+   82 |         if (![01;31m[Kdepth_info_received_[m[K) {
+      |              [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:84:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kfx_[m[K’ was not declared in this scope
+   84 |             [01;31m[Kfx_[m[K = (msg->k[0] != 0.0) ? msg->k[0] : msg->p[0];
+      |             [01;31m[K^~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:85:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kfy_[m[K’ was not declared in this scope
+   85 |             [01;31m[Kfy_[m[K = (msg->k[4] != 0.0) ? msg->k[4] : msg->p[5];
+      |             [01;31m[K^~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:86:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcx_[m[K’ was not declared in this scope
+   86 |             [01;31m[Kcx_[m[K = (msg->k[2] != 0.0) ? msg->k[2] : msg->p[2];
+      |             [01;31m[K^~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:87:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcy_[m[K’ was not declared in this scope
+   87 |             [01;31m[Kcy_[m[K = (msg->k[5] != 0.0) ? msg->k[5] : msg->p[6];
+      |             [01;31m[K^~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:88:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_frame_[m[K’ was not declared in this scope
+   88 |             [01;31m[Kdepth_frame_[m[K = msg->header.frame_id;
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:[m[K In member function ‘[01m[Kvoid LanternDetectorNode::[01;32m[KsyncCallback[m[K(const sensor_msgs::msg::Image_<std::allocator<void> >::ConstSharedPtr&, const sensor_msgs::msg::Image_<std::allocator<void> >::ConstSharedPtr&)[m[K’:
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:100:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kconst[m[K’
+  100 |         [01;31m[Kconst[m[K sensor_msgs::msg::Image::ConstSharedPtr& semantic_msg,
+      |         [01;31m[K^~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:101:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kconst[m[K’
+  101 |         [01;31m[Kconst[m[K sensor_msgs::msg::Image::ConstSharedPtr& depth_msg)
+      |         [01;31m[K^~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:99:9:[m[K [01;31m[Kerror: [m[K‘[01m[KisyncCallback[m[K’ was not declared in this scope; did you mean ‘[01m[KsyncCallback[m[K’?
+   99 |         [01;31m[KisyncCallback[m[K(
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+      |         [32m[KsyncCallback[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:168:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+  168 |     [01;31m[K{[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:214:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+  214 |     [01;31m[K{[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:251:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+  251 |     [01;31m[K{[m[K
+      |     [01;31m[K^[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:328:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  328 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:98:5:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   98 |     [01;36m[K{[m[K
+      |     [01;36m[K^[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:96:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksemantic_msg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   96 |         [01;35m[Kconst sensor_msgs::msg::Image::ConstSharedPtr& semantic_msg[m[K,
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:97:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdepth_msg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   97 |         [01;35m[Kconst sensor_msgs::msg::Image::ConstSharedPtr& depth_msg[m[K)
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:[m[K At global scope:
+[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:328:2:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+  328 | }
+      |  [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/lantern_detector.dir/build.make:76: CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/lantern_detector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

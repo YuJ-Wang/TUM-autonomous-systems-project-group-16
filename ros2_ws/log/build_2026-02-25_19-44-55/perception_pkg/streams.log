@@ -1,0 +1,77 @@
+[0.036s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
+[0.259s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.842s] -- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.933s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.955s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.999s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.038s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.211s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.220s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.401s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.557s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.694s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[1.718s] -- Found octomap_msgs: 2.0.1 (/opt/ros/jazzy/share/octomap_msgs/cmake)
+[1.762s] -- Found tf2_ros: 0.36.16 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[1.997s] -- Found tf2_geometry_msgs: 0.36.16 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[2.012s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[2.017s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.021s] -- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)
+[2.087s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.341s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.347s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.347s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/include>
+[2.347s] -- Configured cppcheck exclude dirs and/or files: 
+[2.349s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.349s] -- Configured cpplint exclude dirs and/or files: 
+[2.350s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.350s] -- Configured 'flake8' exclude dirs and/or files: 
+[2.353s] -- Added test 'lint_cmake' to check CMake code style
+[2.354s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.358s] -- Added test 'uncrustify' to check C / C++ code style
+[2.359s] -- Configured uncrustify additional arguments: 
+[2.360s] -- Added test 'xmllint' to check XML markup files
+[2.365s] -- Configuring done (2.1s)
+[2.437s] -- Generating done (0.0s)
+[2.457s] -- Build files have been written to: /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg
+[2.571s] [ 16%] [32mBuilding CXX object CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o[0m
+[2.660s] [ 50%] Built target pointcloud_to_octomap
+[2.661s] [ 83%] Built target depth_to_pointcloud
+[10.666s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:275:36:[m[K [01;31m[Kerror: [m[Klambda-expression in unevaluated context only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’
+[10.666s]   275 |     std::set<cv::Point2f, decltype([01;31m[K[[m[K](const cv::Point2f& a, const cv::Point2f& b) {
+[10.666s]       |                                    [01;31m[K^[m[K
+[10.667s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:278:7:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[10.667s]   278 |     })[01;31m[K>[m[K detected_lanterns_;
+[10.667s]       |       [01;31m[K^[m[K
+[11.987s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:[m[K In member function ‘[01m[Kstd::vector<LanternDetectorNode::LanternDetection> LanternDetectorNode::[01;32m[KdetectLanterns[m[K(const cv::Mat&, cv::Mat&)[m[K’:
+[11.987s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:148:73:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<LanternDetectorNode::LanternDetection>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[11.987s]   148 |         for (size_t i = 0; i < color_ranges.size() && [01;35m[Kdetections.size() < max_lanterns_[m[K; ++i) {
+[11.987s]       |                                                       [01;35m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[11.995s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:170:90:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ksize[m[K’ in ‘[01m[K((LanternDetectorNode*)this)->LanternDetectorNode::detected_lanterns_[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+[11.995s]   170 |                         detection.label = "Lantern_" + std::to_string(detected_lanterns_.[01;31m[Ksize[m[K() + 1);
+[11.995s]       |                                                                                          [01;31m[K^~~~[m[K
+[11.995s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:175:48:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kinsert[m[K’ in ‘[01m[K((LanternDetectorNode*)this)->LanternDetectorNode::detected_lanterns_[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+[11.995s]   175 |                             detected_lanterns_.[01;31m[Kinsert[m[K(detection.center);
+[11.997s]       |                                                [01;31m[K^~~~~~[m[K
+[12.001s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:[m[K In member function ‘[01m[Kbool LanternDetectorNode::[01;32m[KisNewLantern[m[K(const cv::Point2f&)[m[K’:
+[12.001s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:194:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kbegin[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::begin[m[K’?
+[12.001s]   194 |         for (const auto& existing : [01;31m[Kdetected_lanterns_[m[K) {
+[12.002s]       |                                     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[12.002s]       |                                     [32m[Kstd::begin[m[K
+[12.002s] In file included from [01m[K/usr/include/c++/13/string:53[m[K,
+[12.002s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:18[m[K,
+[12.002s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[12.002s]                  from [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:1[m[K:
+[12.002s] [01m[K/usr/include/c++/13/bits/range_access.h:114:37:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::begin[m[K’ declared here
+[12.002s]   114 |   template<typename _Tp> const _Tp* [01;36m[Kbegin[m[K(const valarray<_Tp>&) noexcept;
+[12.002s]       |                                     [01;36m[K^~~~~[m[K
+[12.007s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:194:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kend[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd::end[m[K’?
+[12.007s]   194 |         for (const auto& existing : [01;31m[Kdetected_lanterns_[m[K) {
+[12.007s]       |                                     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[12.007s]       |                                     [32m[Kstd::end[m[K
+[12.007s] [01m[K/usr/include/c++/13/bits/range_access.h:116:37:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::end[m[K’ declared here
+[12.008s]   116 |   template<typename _Tp> const _Tp* [01;36m[Kend[m[K(const valarray<_Tp>&) noexcept;
+[12.008s]       |                                     [01;36m[K^~~[m[K
+[23.768s] gmake[2]: *** [CMakeFiles/lantern_detector.dir/build.make:76: CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o] Error 1
+[23.769s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/lantern_detector.dir/all] Error 2
+[23.769s] gmake: *** [Makefile:146: all] Error 2
+[23.791s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8

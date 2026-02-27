@@ -1,0 +1,68 @@
+[0.021s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg -DCMAKE_INSTALL_PREFIX=/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg
+[0.148s] -- The C compiler identification is GNU 13.3.0
+[0.273s] -- The CXX compiler identification is GNU 13.3.0
+[0.327s] -- Detecting C compiler ABI info
+[0.634s] -- Detecting C compiler ABI info - done
+[0.650s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.650s] -- Detecting C compile features
+[0.650s] -- Detecting C compile features - done
+[0.675s] -- Detecting CXX compiler ABI info
+[0.963s] -- Detecting CXX compiler ABI info - done
+[0.973s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.973s] -- Detecting CXX compile features
+[0.973s] -- Detecting CXX compile features - done
+[0.979s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.444s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.740s] -- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.795s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.814s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.836s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.866s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.983s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.990s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[2.254s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[2.307s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[2.370s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.487s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[2.568s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[2.593s] -- Found octomap_msgs: 2.0.1 (/opt/ros/jazzy/share/octomap_msgs/cmake)
+[2.621s] -- Found tf2_ros: 0.36.16 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[2.776s] -- Found tf2_geometry_msgs: 0.36.16 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[2.786s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[2.787s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.787s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.790s] -- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)
+[2.830s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[3.103s] -- Added test 'copyright' to check source files copyright and LICENSE
+[3.103s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.104s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/include>
+[3.104s] -- Configured cppcheck exclude dirs and/or files: 
+[3.110s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[3.110s] -- Configured cpplint exclude dirs and/or files: 
+[3.111s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.111s] -- Configured 'flake8' exclude dirs and/or files: 
+[3.111s] -- Added test 'lint_cmake' to check CMake code style
+[3.111s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.112s] -- Added test 'uncrustify' to check C / C++ code style
+[3.112s] -- Configured uncrustify additional arguments: 
+[3.113s] -- Added test 'xmllint' to check XML markup files
+[3.114s] -- Configuring done (3.1s)
+[3.167s] -- Generating done (0.0s)
+[3.177s] -- Build files have been written to: /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg
+[3.219s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg -DCMAKE_INSTALL_PREFIX=/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg
+[3.219s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
+[3.372s] [ 16%] Building CXX object CMakeFiles/pointcloud_to_octomap.dir/src/pointcloud_to_octomap.cpp.o
+[3.376s] [ 33%] Building CXX object CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o
+[3.388s] [ 50%] Building CXX object CMakeFiles/depth_to_pointcloud.dir/src/depth_to_pointcloud.cpp.o
+[12.319s] /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp: In member function ‘std::vector<LanternDetectorNode::LanternDetection> LanternDetectorNode::detectLanterns(const cv::Mat&, cv::Mat&)’:
+[12.320s] /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:148:73: warning: comparison of integer expressions of different signedness: ‘std::vector<LanternDetectorNode::LanternDetection>::size_type’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+[12.320s]   148 |         for (size_t i = 0; i < color_ranges.size() && detections.size() < max_lanterns_; ++i) {
+[12.320s]       |                                                       ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[22.034s] gmake[2]: *** [CMakeFiles/lantern_detector.dir/build.make:76: CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o] Interrupt
+[22.034s] gmake[2]: *** [CMakeFiles/depth_to_pointcloud.dir/build.make:76: CMakeFiles/depth_to_pointcloud.dir/src/depth_to_pointcloud.cpp.o] Interrupt
+[22.034s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/lantern_detector.dir/all] Interrupt
+[22.034s] gmake[1]: *** [CMakeFiles/Makefile2:141: CMakeFiles/depth_to_pointcloud.dir/all] Interrupt
+[22.034s] gmake[2]: *** [CMakeFiles/pointcloud_to_octomap.dir/build.make:76: CMakeFiles/pointcloud_to_octomap.dir/src/pointcloud_to_octomap.cpp.o] Interrupt
+[22.034s] gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/pointcloud_to_octomap.dir/all] Interrupt
+[22.035s] gmake: *** [Makefile:146: all] Interrupt
+[22.141s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8

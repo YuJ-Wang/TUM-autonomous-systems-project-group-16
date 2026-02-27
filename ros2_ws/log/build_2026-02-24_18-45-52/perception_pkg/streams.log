@@ -1,0 +1,25 @@
+[1.420s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/perception_pkg build --build-base /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/build install --record /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/install.log --single-version-externally-managed install_data
+[1.819s] running egg_info
+[1.845s] writing ../../build/perception_pkg/perception_pkg.egg-info/PKG-INFO
+[1.845s] writing dependency_links to ../../build/perception_pkg/perception_pkg.egg-info/dependency_links.txt
+[1.845s] writing entry points to ../../build/perception_pkg/perception_pkg.egg-info/entry_points.txt
+[1.846s] writing requirements to ../../build/perception_pkg/perception_pkg.egg-info/requires.txt
+[1.846s] writing top-level names to ../../build/perception_pkg/perception_pkg.egg-info/top_level.txt
+[1.893s] reading manifest file '../../build/perception_pkg/perception_pkg.egg-info/SOURCES.txt'
+[1.893s] writing manifest file '../../build/perception_pkg/perception_pkg.egg-info/SOURCES.txt'
+[1.894s] running build
+[1.894s] running build_py
+[1.894s] copying perception_pkg/depth_to_pointcloud.py -> /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/build/lib/perception_pkg
+[1.894s] running install
+[1.903s] running install_lib
+[1.923s] copying /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/build/lib/perception_pkg/depth_to_pointcloud.py -> /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/python3.12/site-packages/perception_pkg
+[1.923s] byte-compiling /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/python3.12/site-packages/perception_pkg/depth_to_pointcloud.py to depth_to_pointcloud.cpython-312.pyc
+[1.928s] running install_data
+[1.928s] copying launch/perception.launch.py -> /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/launch
+[1.929s] running install_egg_info
+[1.954s] removing '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/python3.12/site-packages/perception_pkg-0.0.0-py3.12.egg-info' (and everything under it)
+[1.955s] Copying ../../build/perception_pkg/perception_pkg.egg-info to /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/python3.12/site-packages/perception_pkg-0.0.0-py3.12.egg-info
+[1.955s] running install_scripts
+[2.150s] Installing depth_to_pointcloud script to /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/perception_pkg
+[2.151s] writing list of installed files to '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/install.log'
+[2.328s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/perception_pkg build --build-base /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/build install --record /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg/install.log --single-version-externally-managed install_data

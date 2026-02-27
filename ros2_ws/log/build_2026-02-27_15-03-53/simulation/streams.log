@@ -1,0 +1,37 @@
+[0.038s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation': AMENT_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation -- -j8 -l8
+[0.198s] [ 44%] Built target libsocket
+[0.223s] [ 55%] Built target state_estimate_corruptor_node
+[0.270s] [ 77%] Built target tcpstreamreader
+[0.272s] [ 77%] Built target w_to_unity
+[0.335s] [ 88%] Built target tcpimage
+[0.416s] [ 94%] [32mBuilding CXX object CMakeFiles/unity_ros.dir/src/unity_ros.cpp.o[0m
+[32.017s] [100%] [32m[1mLinking CXX executable unity_ros[0m
+[34.672s] [100%] Built target unity_ros
+[34.703s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation' returned '0': AMENT_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation -- -j8 -l8
+[34.722s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation': AMENT_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation
+[34.739s] -- Install configuration: ""
+[34.739s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib/simulation/w_to_unity
+[34.739s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib/simulation/state_estimate_corruptor_node
+[34.739s] -- Installing: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib/simulation/unity_ros
+[34.755s] -- Set non-toolchain portion of runtime path of "/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib/simulation/unity_ros" to ""
+[34.755s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/launch
+[34.755s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/launch/unity_sim.launch.py
+[34.756s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/launch/simulation.launch.py
+[34.756s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/launch/unity_ros.launch.py
+[34.756s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/ament_index/resource_index/package_run_dependencies/simulation
+[34.756s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/ament_index/resource_index/parent_prefix_path/simulation
+[34.756s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/environment/ament_prefix_path.sh
+[34.756s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/environment/ament_prefix_path.dsv
+[34.756s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/environment/path.sh
+[34.756s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/environment/path.dsv
+[34.757s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/local_setup.bash
+[34.757s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/local_setup.sh
+[34.757s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/local_setup.zsh
+[34.757s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/local_setup.dsv
+[34.758s] -- Installing: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.dsv
+[34.758s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/ament_index/resource_index/packages/simulation
+[34.758s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/cmake/ament_cmake_export_dependencies-extras.cmake
+[34.758s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/cmake/simulationConfig.cmake
+[34.758s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/cmake/simulationConfig-version.cmake
+[34.758s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.xml
+[34.765s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation' returned '0': AMENT_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation

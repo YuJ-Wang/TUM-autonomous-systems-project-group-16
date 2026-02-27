@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "mav_planning_msgs__py",
+		"source" : "/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs/mav_planning_msgs__py"
+	}
+}

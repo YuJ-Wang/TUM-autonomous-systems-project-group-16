@@ -1,0 +1,10 @@
+[0.022s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
+[0.163s] [ 50%] [32mBuilding CXX object CMakeFiles/depth_to_pointcloud.dir/src/depth_to_pointcloud.cpp.o[0m
+[0.572s] [01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/depth_to_pointcloud.cpp:7:10:[m[K [01;31m[Kfatal error: [m[Kcv_bridge/cv_bridge.h: No such file or directory
+[0.572s]     7 | #include [01;31m[K<cv_bridge/cv_bridge.h>[m[K
+[0.572s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.572s] compilation terminated.
+[0.585s] gmake[2]: *** [CMakeFiles/depth_to_pointcloud.dir/build.make:76: CMakeFiles/depth_to_pointcloud.dir/src/depth_to_pointcloud.cpp.o] Error 1
+[0.587s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/depth_to_pointcloud.dir/all] Error 2
+[0.589s] gmake: *** [Makefile:146: all] Error 2
+[0.604s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
