@@ -1,0 +1,19 @@
+[0.027s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
+[0.211s] [ 33%] Built target depth_to_pointcloud
+[0.219s] [ 50%] Building CXX object CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o
+[0.219s] [ 83%] Built target pointcloud_to_octomap
+[9.957s] /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp: In member function ‘std::vector<LanternDetectorNode::LanternDetection> LanternDetectorNode::detectLanterns(const cv::Mat&, cv::Mat&)’:
+[9.958s] /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:148:73: warning: comparison of integer expressions of different signedness: ‘std::vector<LanternDetectorNode::LanternDetection>::size_type’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+[9.958s]   148 |         for (size_t i = 0; i < color_ranges.size() && detections.size() < max_lanterns_; ++i) {
+[9.958s]       |                                                       ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[9.976s] /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp: In member function ‘void LanternDetectorNode::publishDetections(const std::vector<LanternDetection>&, const std_msgs::msg::Header&)’:
+[9.976s] /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:204:56: warning: unused parameter ‘header’ [-Wunused-parameter]
+[9.976s]   204 |                           const std_msgs::msg::Header& header)
+[9.976s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+[44.212s] sh: 0: getcwd() failed: No such file or directory
+[44.283s] Linking CXX executable lantern_detector
+[44.308s] Error opening link script "CMakeFiles/lantern_detector.dir/link.txt"
+[44.311s] gmake[2]: *** [CMakeFiles/lantern_detector.dir/build.make:229: lantern_detector] Error 1
+[44.312s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/lantern_detector.dir/all] Error 2
+[44.313s] gmake: *** [Makefile:146: all] Error 2
+[44.325s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8

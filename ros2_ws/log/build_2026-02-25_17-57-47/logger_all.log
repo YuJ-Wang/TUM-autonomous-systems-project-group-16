@@ -1,0 +1,427 @@
+[0.168s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.168s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7505edb79eb0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7505edc445f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7505edc445f0>>)
+[0.266s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.266s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.266s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.266s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.266s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.266s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.266s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/jiacheng/autonomoussystems2025/ros2_ws'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extension 'ignore'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extension 'ignore_ament_install'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extensions ['colcon_pkg']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extension 'colcon_pkg'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extensions ['colcon_meta']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extension 'colcon_meta'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extensions ['ros']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller_pkg) by extension 'ros'
+[0.298s] DEBUG:colcon.colcon_core.package_identification:Package 'src/controller_pkg' with type 'ros.ament_cmake' and name 'controller_pkg'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extension 'ignore'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extension 'ignore_ament_install'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extensions ['colcon_pkg']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extension 'colcon_pkg'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extensions ['colcon_meta']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extension 'colcon_meta'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extensions ['ros']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_msgs) by extension 'ros'
+[0.299s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mav_msgs' with type 'ros.ament_cmake' and name 'mav_msgs'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extension 'ignore'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extension 'ignore_ament_install'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extensions ['colcon_pkg']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extension 'colcon_pkg'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extensions ['colcon_meta']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extension 'colcon_meta'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extensions ['ros']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/mav_planning_msgs) by extension 'ros'
+[0.300s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mav_planning_msgs' with type 'ros.ament_cmake' and name 'mav_planning_msgs'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extension 'ignore'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extension 'ignore_ament_install'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extensions ['colcon_pkg']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extension 'colcon_pkg'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extensions ['colcon_meta']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extension 'colcon_meta'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extensions ['ros']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception_pkg) by extension 'ros'
+[0.301s] DEBUG:colcon.colcon_core.package_identification:Package 'src/perception_pkg' with type 'ros.ament_cmake' and name 'perception_pkg'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extensions ['ignore', 'ignore_ament_install']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'ignore'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'ignore_ament_install'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extensions ['colcon_pkg']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'colcon_pkg'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extensions ['colcon_meta']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'colcon_meta'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extensions ['ros']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'ros'
+[0.302s] DEBUG:colcon.colcon_core.package_identification:Package 'src/simulation' with type 'ros.ament_cmake' and name 'simulation'
+[0.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.321s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.321s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.326s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/jiacheng/autonomoussystems2025/ros2_ws/install
+[0.327s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 289 installed packages in /opt/ros/jazzy
+[0.328s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.357s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'cmake_args' from command line to 'None'
+[0.357s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'cmake_target' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.358s] DEBUG:colcon.colcon_core.verb:Building package 'mav_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs', 'merge_install': False, 'path': '/home/jiacheng/autonomoussystems2025/ros2_ws/src/mav_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'cmake_target' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'perception_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.358s] DEBUG:colcon.colcon_core.verb:Building package 'perception_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg', 'merge_install': False, 'path': '/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg', 'symlink_install': False, 'test_result_base': None}
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'cmake_target' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'controller_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.358s] DEBUG:colcon.colcon_core.verb:Building package 'controller_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg', 'merge_install': False, 'path': '/home/jiacheng/autonomoussystems2025/ros2_ws/src/controller_pkg', 'symlink_install': False, 'test_result_base': None}
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'cmake_target' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.358s] Level 5:colcon.colcon_core.verb:set package 'mav_planning_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.358s] DEBUG:colcon.colcon_core.verb:Building package 'mav_planning_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs', 'merge_install': False, 'path': '/home/jiacheng/autonomoussystems2025/ros2_ws/src/mav_planning_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_args' from command line to 'None'
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_target' from command line to 'None'
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_clean_first' from command line to 'False'
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_force_configure' from command line to 'False'
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'ament_cmake_args' from command line to 'None'
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.359s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.359s] DEBUG:colcon.colcon_core.verb:Building package 'simulation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation', 'merge_install': False, 'path': '/home/jiacheng/autonomoussystems2025/ros2_ws/src/simulation', 'symlink_install': False, 'test_result_base': None}
+[0.359s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.360s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.360s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/mav_msgs' with build type 'ament_cmake'
+[0.360s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/mav_msgs'
+[0.366s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.366s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.366s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.370s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg' with build type 'ament_cmake'
+[0.370s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg'
+[0.371s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.371s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.379s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs -- -j8 -l8
+[0.385s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
+[0.853s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs -- -j8 -l8
+[0.866s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs
+[0.988s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mav_msgs)
+[0.988s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_msgs
+[1.004s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs' for CMake module files
+[1.006s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs' for CMake config files
+[1.006s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_msgs', 'cmake_prefix_path')
+[1.007s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/cmake_prefix_path.ps1'
+[1.010s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/cmake_prefix_path.dsv'
+[1.013s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/cmake_prefix_path.sh'
+[1.014s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib'
+[1.014s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_msgs', 'ld_library_path_lib')
+[1.014s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/ld_library_path_lib.ps1'
+[1.018s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/ld_library_path_lib.dsv'
+[1.019s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/ld_library_path_lib.sh'
+[1.020s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/bin'
+[1.020s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/pkgconfig/mav_msgs.pc'
+[1.020s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages'
+[1.021s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_msgs', 'pythonpath')
+[1.021s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/pythonpath.ps1'
+[1.023s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/pythonpath.dsv'
+[1.023s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/pythonpath.sh'
+[1.028s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/bin'
+[1.029s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.ps1'
+[1.030s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.dsv'
+[1.031s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.sh'
+[1.033s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.bash'
+[1.034s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.zsh'
+[1.036s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/colcon-core/packages/mav_msgs)
+[1.037s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mav_msgs)
+[1.038s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs' for CMake module files
+[1.039s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs' for CMake config files
+[1.040s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_msgs', 'cmake_prefix_path')
+[1.040s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/cmake_prefix_path.ps1'
+[1.041s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/cmake_prefix_path.dsv'
+[1.042s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/cmake_prefix_path.sh'
+[1.043s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib'
+[1.043s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_msgs', 'ld_library_path_lib')
+[1.043s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/ld_library_path_lib.ps1'
+[1.044s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/ld_library_path_lib.dsv'
+[1.044s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/ld_library_path_lib.sh'
+[1.045s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/bin'
+[1.045s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/pkgconfig/mav_msgs.pc'
+[1.045s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages'
+[1.045s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_msgs', 'pythonpath')
+[1.045s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/pythonpath.ps1'
+[1.046s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/pythonpath.dsv'
+[1.046s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/hook/pythonpath.sh'
+[1.047s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/bin'
+[1.047s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.ps1'
+[1.048s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.dsv'
+[1.048s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.sh'
+[1.049s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.bash'
+[1.049s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/mav_msgs/package.zsh'
+[1.050s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/share/colcon-core/packages/mav_msgs)
+[1.050s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/controller_pkg' with build type 'ament_cmake'
+[1.051s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/controller_pkg'
+[1.051s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.051s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.056s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/mav_planning_msgs' with build type 'ament_cmake'
+[1.056s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/mav_planning_msgs'
+[1.056s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.056s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.060s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/simulation' with build type 'ament_cmake'
+[1.060s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jiacheng/autonomoussystems2025/ros2_ws/src/simulation'
+[1.060s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.060s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.071s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg -- -j8 -l8
+[1.075s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs -- -j8 -l8
+[1.079s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation -- -j8 -l8
+[1.232s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg' returned '0': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg -- -j8 -l8
+[1.234s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg
+[1.255s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(controller_pkg)
+[1.255s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg' for CMake module files
+[1.256s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg' returned '0': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/controller_pkg
+[1.257s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg' for CMake config files
+[1.257s] Level 1:colcon.colcon_core.shell:create_environment_hook('controller_pkg', 'cmake_prefix_path')
+[1.257s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/cmake_prefix_path.ps1'
+[1.258s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/cmake_prefix_path.dsv'
+[1.259s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/cmake_prefix_path.sh'
+[1.259s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib'
+[1.259s] Level 1:colcon.colcon_core.shell:create_environment_hook('controller_pkg', 'ld_library_path_lib')
+[1.260s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/ld_library_path_lib.ps1'
+[1.260s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/ld_library_path_lib.dsv'
+[1.261s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/ld_library_path_lib.sh'
+[1.261s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/bin'
+[1.261s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib/pkgconfig/controller_pkg.pc'
+[1.261s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib/python3.12/site-packages'
+[1.262s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/bin'
+[1.262s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.ps1'
+[1.263s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.dsv'
+[1.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.sh'
+[1.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.bash'
+[1.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.zsh'
+[1.265s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/colcon-core/packages/controller_pkg)
+[1.266s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(controller_pkg)
+[1.266s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg' for CMake module files
+[1.266s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg' for CMake config files
+[1.267s] Level 1:colcon.colcon_core.shell:create_environment_hook('controller_pkg', 'cmake_prefix_path')
+[1.267s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/cmake_prefix_path.ps1'
+[1.267s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/cmake_prefix_path.dsv'
+[1.268s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/cmake_prefix_path.sh'
+[1.268s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib'
+[1.268s] Level 1:colcon.colcon_core.shell:create_environment_hook('controller_pkg', 'ld_library_path_lib')
+[1.269s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/ld_library_path_lib.ps1'
+[1.269s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/ld_library_path_lib.dsv'
+[1.269s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/hook/ld_library_path_lib.sh'
+[1.270s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/bin'
+[1.270s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib/pkgconfig/controller_pkg.pc'
+[1.271s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib/python3.12/site-packages'
+[1.271s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/bin'
+[1.271s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.ps1'
+[1.276s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.dsv'
+[1.276s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.sh'
+[1.277s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.bash'
+[1.278s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/controller_pkg/package.zsh'
+[1.278s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/share/colcon-core/packages/controller_pkg)
+[1.376s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation' returned '0': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation -- -j8 -l8
+[1.378s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation
+[1.411s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(simulation)
+[1.411s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation' returned '0': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/simulation
+[1.412s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation' for CMake module files
+[1.413s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation' for CMake config files
+[1.415s] Level 1:colcon.colcon_core.shell:create_environment_hook('simulation', 'cmake_prefix_path')
+[1.415s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/cmake_prefix_path.ps1'
+[1.417s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/cmake_prefix_path.dsv'
+[1.417s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/cmake_prefix_path.sh'
+[1.418s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib'
+[1.418s] Level 1:colcon.colcon_core.shell:create_environment_hook('simulation', 'ld_library_path_lib')
+[1.418s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/ld_library_path_lib.ps1'
+[1.419s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/ld_library_path_lib.dsv'
+[1.421s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/ld_library_path_lib.sh'
+[1.422s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/bin'
+[1.422s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib/pkgconfig/simulation.pc'
+[1.423s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib/python3.12/site-packages'
+[1.423s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/bin'
+[1.423s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.ps1'
+[1.424s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.dsv'
+[1.424s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.sh'
+[1.426s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.bash'
+[1.427s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.zsh'
+[1.428s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/colcon-core/packages/simulation)
+[1.429s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(simulation)
+[1.430s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation' for CMake module files
+[1.430s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation' for CMake config files
+[1.433s] Level 1:colcon.colcon_core.shell:create_environment_hook('simulation', 'cmake_prefix_path')
+[1.433s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/cmake_prefix_path.ps1'
+[1.434s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/cmake_prefix_path.dsv'
+[1.434s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/cmake_prefix_path.sh'
+[1.437s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib'
+[1.437s] Level 1:colcon.colcon_core.shell:create_environment_hook('simulation', 'ld_library_path_lib')
+[1.437s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/ld_library_path_lib.ps1'
+[1.440s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/ld_library_path_lib.dsv'
+[1.441s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/hook/ld_library_path_lib.sh'
+[1.441s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/bin'
+[1.442s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib/pkgconfig/simulation.pc'
+[1.442s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib/python3.12/site-packages'
+[1.442s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/bin'
+[1.443s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.ps1'
+[1.449s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.dsv'
+[1.460s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.sh'
+[1.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.bash'
+[1.462s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/simulation/package.zsh'
+[1.462s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/share/colcon-core/packages/simulation)
+[1.663s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs' returned '0': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs -- -j8 -l8
+[1.665s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs
+[1.819s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mav_planning_msgs)
+[1.820s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs' for CMake module files
+[1.821s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs' returned '0': CMAKE_PREFIX_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/mav_planning_msgs
+[1.822s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs' for CMake config files
+[1.822s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_planning_msgs', 'cmake_prefix_path')
+[1.823s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/cmake_prefix_path.ps1'
+[1.823s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/cmake_prefix_path.dsv'
+[1.824s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/cmake_prefix_path.sh'
+[1.826s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib'
+[1.826s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_planning_msgs', 'ld_library_path_lib')
+[1.826s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/ld_library_path_lib.ps1'
+[1.826s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/ld_library_path_lib.dsv'
+[1.830s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/ld_library_path_lib.sh'
+[1.831s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/bin'
+[1.832s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/pkgconfig/mav_planning_msgs.pc'
+[1.833s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages'
+[1.833s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_planning_msgs', 'pythonpath')
+[1.833s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/pythonpath.ps1'
+[1.835s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/pythonpath.dsv'
+[1.836s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/pythonpath.sh'
+[1.839s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/bin'
+[1.839s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.ps1'
+[1.840s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.dsv'
+[1.840s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.sh'
+[1.841s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.bash'
+[1.841s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.zsh'
+[1.842s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/colcon-core/packages/mav_planning_msgs)
+[1.843s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mav_planning_msgs)
+[1.843s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs' for CMake module files
+[1.844s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs' for CMake config files
+[1.844s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_planning_msgs', 'cmake_prefix_path')
+[1.844s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/cmake_prefix_path.ps1'
+[1.845s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/cmake_prefix_path.dsv'
+[1.845s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/cmake_prefix_path.sh'
+[1.846s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib'
+[1.846s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_planning_msgs', 'ld_library_path_lib')
+[1.846s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/ld_library_path_lib.ps1'
+[1.847s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/ld_library_path_lib.dsv'
+[1.847s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/ld_library_path_lib.sh'
+[1.847s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/bin'
+[1.848s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/pkgconfig/mav_planning_msgs.pc'
+[1.848s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages'
+[1.848s] Level 1:colcon.colcon_core.shell:create_environment_hook('mav_planning_msgs', 'pythonpath')
+[1.848s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/pythonpath.ps1'
+[1.848s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/pythonpath.dsv'
+[1.849s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/hook/pythonpath.sh'
+[1.850s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/bin'
+[1.850s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.ps1'
+[1.851s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.dsv'
+[1.851s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.sh'
+[1.852s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.bash'
+[1.852s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/mav_planning_msgs/package.zsh'
+[1.853s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/share/colcon-core/packages/mav_planning_msgs)
+[8.637s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete was interrupted
+[8.637s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete again
+[8.704s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(perception_pkg)
+[8.704s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg' for CMake module files
+[8.705s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg' for CMake config files
+[8.705s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
+[8.706s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception_pkg', 'cmake_prefix_path')
+[8.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/hook/cmake_prefix_path.ps1'
+[8.708s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/hook/cmake_prefix_path.dsv'
+[8.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/hook/cmake_prefix_path.sh'
+[8.709s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib'
+[8.710s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/bin'
+[8.710s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/pkgconfig/perception_pkg.pc'
+[8.710s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/python3.12/site-packages'
+[8.710s] Level 1:colcon.colcon_core.environment:checking '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/bin'
+[8.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/package.ps1'
+[8.711s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/package.dsv'
+[8.712s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/package.sh'
+[8.714s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/package.bash'
+[8.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/package.zsh'
+[8.721s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/colcon-core/packages/perception_pkg)
+[8.732s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished
+[8.733s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[8.733s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[8.733s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[8.755s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[8.755s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[8.755s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[8.784s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[8.784s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/local_setup.ps1'
+[8.785s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jiacheng/autonomoussystems2025/ros2_ws/install/_local_setup_util_ps1.py'
+[8.793s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/setup.ps1'
+[8.796s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/local_setup.sh'
+[8.799s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jiacheng/autonomoussystems2025/ros2_ws/install/_local_setup_util_sh.py'
+[8.802s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/setup.sh'
+[8.805s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/local_setup.bash'
+[8.807s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/setup.bash'
+[8.810s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/local_setup.zsh'
+[8.811s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jiacheng/autonomoussystems2025/ros2_ws/install/setup.zsh'

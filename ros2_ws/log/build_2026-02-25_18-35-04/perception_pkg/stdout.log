@@ -1,0 +1,2 @@
+[ 25%] Building CXX object CMakeFiles/pointcloud_to_octomap.dir/src/pointcloud_to_octomap.cpp.o
+[ 75%] Built target depth_to_pointcloud
