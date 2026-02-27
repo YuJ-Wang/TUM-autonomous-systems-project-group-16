@@ -125,7 +125,7 @@ def generate_launch_description():
             package="tf2_ros",
             executable="static_transform_publisher",
             name="sim_depth_camera",
-            arguments=["0", "0", "0", "0", "0", "0", "/depth_camera", "/Quadrotor/DepthCamera"],
+            arguments=["0", "0", "0", "0", "0", "0", "/depth_camera", "/Quadrotor/Sensors/DepthCamera"],
             output="screen",
         ),
         Node(
@@ -146,7 +146,8 @@ def generate_launch_description():
             package="tf2_ros",
             executable="static_transform_publisher",
             name="depth_camera_to_body",
-            arguments=["0", "0", "0", "0", "0", "0", "/true_body", "/depth_camera"],
+            # Camera 30cm forward of body: x=0.3, y=0, z=0, roll=0, pitch=0, yaw=0
+            arguments=["0.3", "0", "0", "0", "0", "0", "/true_body", "/depth_camera"],
             output="screen",
         ),
     ]
