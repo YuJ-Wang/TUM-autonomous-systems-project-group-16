@@ -1,25 +1,23 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>perception_pkg</name>
-  <version>0.0.0</version>
-  <description>Perception package for depth to pointcloud conversion and 3D mapping</description>
-  <maintainer email="jiacheng7354@gmail.com">jiacheng</maintainer>
-  <license>Apache-2.0</license>
+  <name>detection</name>
+  <version>1.0.0</version>
+  <description>Object detection module for lanterns and other targets</description>
+  <maintainer email="jiacheng@example.com">Jiacheng</maintainer>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
   <depend>sensor_msgs</depend>
   <depend>geometry_msgs</depend>
+  <depend>visualization_msgs</depend>
   <depend>cv_bridge</depend>
-  <depend>eigen</depend>
-  <depend>octomap</depend>
-  <depend>octomap_msgs</depend>
+  <depend>opencv</depend>
   <depend>tf2_ros</depend>
   <depend>tf2_geometry_msgs</depend>
-  <depend>visualization_msgs</depend>
-  <depend>std_msgs</depend>
+  <depend>message_filters</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
