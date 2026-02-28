@@ -11,15 +11,17 @@ find_package(rclcpp REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(utils REQUIRED)
+find_package(octomap REQUIRED)
+find_package(octomap_msgs REQUIRED)
 
-include_directories(include)
+include_directories(include ${OCTOMAP_INCLUDE_DIRS})
 
 add_executable(path_planner_node src/path_planner_node.cpp)
 ament_target_dependencies(
   path_planner_node
-  rclcpp nav_msgs geometry_msgs std_msgs utils
+  rclcpp nav_msgs geometry_msgs std_msgs octomap_msgs
 )
+target_link_libraries(path_planner_node ${OCTOMAP_LIBRARIES})
 
 install(TARGETS path_planner_node RUNTIME DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY include/ DESTINATION include)

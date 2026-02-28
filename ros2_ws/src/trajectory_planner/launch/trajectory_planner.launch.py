@@ -26,15 +26,9 @@ def generate_launch_description():
                 config_file,
                 {'use_sim_time': use_sim_time},
             ],
-            remappings=[
-                # trajectory_planner publishes command/trajectory which goes to
-                # the quadrotor_controller interface (or directly to desired_state
-                # if the interface is not yet implemented)
-                ('command/trajectory', 'desired_state'),
-            ],
             # Topic wiring:
             #   path                (Path)                         <- path_planner
-            #   desired_state       (MultiDOFJointTrajectory)      -> controller
+            #   command/trajectory  (MultiDOFJointTrajectory)      -> controller
             #   trajectory_status   (String)                       -> status output
         ),
     ])

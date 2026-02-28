@@ -39,9 +39,13 @@ void TrajectoryPlannerNode::on_path(const nav_msgs::msg::Path::SharedPtr msg)
   trajectory_msgs::msg::MultiDOFJointTrajectory trajectory;
   trajectory.header.stamp = now();
   trajectory.header.frame_id = msg->header.frame_id;
+  trajectory.joint_names.push_back("base_link");
   
+  // Compute per-segment distances and cumulative distance from start
   std::vector<double> segment_distances;
+  std::vector<double> cumulative_distance;  // distance from start at each waypoint
   double total_distance = 0.0;
+  cumulative_distance.push_back(0.0);
   
   for (size_t i = 1; i < msg->poses.size(); ++i) {
     double dist = distance_between(
@@ -49,16 +53,45 @@ void TrajectoryPlannerNode::on_path(const nav_msgs::msg::Path::SharedPtr msg)
       msg->poses[i].pose.position);
     segment_distances.push_back(dist);
     total_distance += dist;
+    cumulative_distance.push_back(total_distance);
   }
 
+  if (total_distance < 1e-6) {
+    RCLCPP_WARN(this->get_logger(), "Path has near-zero length, skipping");
+    return;
+  }
+
+  // Trapezoidal velocity profile distances
   double accel_distance = (desired_speed_ * desired_speed_) / (2.0 * max_acceleration_);
+  // If path is too short to reach full speed, split evenly
+  if (2.0 * accel_distance > total_distance) {
+    accel_distance = total_distance / 2.0;
+  }
+  double decel_start = total_distance - accel_distance;
   
   double current_time = 0.0;
   
   for (size_t i = 0; i < msg->poses.size(); ++i) {
+    double dist_from_start = cumulative_distance[i];
+    double dist_to_end = total_distance - dist_from_start;
+    
+    // Compute speed at this waypoint using trapezoidal profile
+    double speed;
+    if (dist_from_start < accel_distance) {
+      // Acceleration phase
+      speed = std::max(std::sqrt(2.0 * max_acceleration_ * dist_from_start), 0.1);
+    } else if (dist_from_start > decel_start) {
+      // Deceleration phase
+      speed = std::max(std::sqrt(2.0 * max_acceleration_ * dist_to_end), 0.1);
+    } else {
+      // Constant speed phase
+      speed = desired_speed_;
+    }
+    
     trajectory_msgs::msg::MultiDOFJointTrajectoryPoint point;
     point.time_from_start = rclcpp::Duration::from_seconds(current_time);
     
+    // Position (transform)
     geometry_msgs::msg::Transform transform;
     transform.translation.x = msg->poses[i].pose.position.x;
     transform.translation.y = msg->poses[i].pose.position.y;
@@ -66,26 +99,39 @@ void TrajectoryPlannerNode::on_path(const nav_msgs::msg::Path::SharedPtr msg)
     transform.rotation = msg->poses[i].pose.orientation;
     point.transforms.push_back(transform);
     
+    // Velocity — direction toward next waypoint, scaled by speed
+    geometry_msgs::msg::Twist vel;
+    if (i + 1 < msg->poses.size()) {
+      double seg_dist = segment_distances[i];
+      if (seg_dist > 1e-6) {
+        double dx = msg->poses[i+1].pose.position.x - msg->poses[i].pose.position.x;
+        double dy = msg->poses[i+1].pose.position.y - msg->poses[i].pose.position.y;
+        double dz = msg->poses[i+1].pose.position.z - msg->poses[i].pose.position.z;
+        vel.linear.x = (dx / seg_dist) * speed;
+        vel.linear.y = (dy / seg_dist) * speed;
+        vel.linear.z = (dz / seg_dist) * speed;
+      }
+    }
+    // Last point: zero velocity (stop)
+    point.velocities.push_back(vel);
+    
+    // Zero acceleration hint
+    geometry_msgs::msg::Twist accel;
+    point.accelerations.push_back(accel);
+    
     trajectory.points.push_back(point);
     
+    // Compute time to next waypoint
     if (i < segment_distances.size()) {
-      double speed = desired_speed_;
-      double distance_remaining = total_distance - (total_distance - segment_distances[i]);
-      
-      // Determine if we're in acceleration, constant, or deceleration phase
-      if (distance_remaining < accel_distance) {
-        speed = std::sqrt(2.0 * max_acceleration_ * distance_remaining);
-      } else if (distance_remaining < (total_distance - accel_distance)) {
-        speed = desired_speed_;
-      } else {
-        speed = std::sqrt(2.0 * max_acceleration_ * (total_distance - distance_remaining));
-      }
-      
-      current_time += std::max(segment_distances[i] / speed, min_segment_dt_);
+      double avg_speed = std::max(speed, 0.1);
+      current_time += std::max(segment_distances[i] / avg_speed, min_segment_dt_);
     }
   }
   
   traj_pub_->publish(trajectory);
+  
+  RCLCPP_INFO(this->get_logger(), "Trajectory published: %zu points, %.1f m, %.1f s",
+    trajectory.points.size(), total_distance, current_time);
   
   auto status_msg = std::make_unique<std_msgs::msg::String>();
   status_msg->data = "Trajectory generated with " + std::to_string(trajectory.points.size()) + " waypoints";
