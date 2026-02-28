@@ -14,20 +14,20 @@ TrajectoryPlannerNode::TrajectoryPlannerNode()
 void TrajectoryPlannerNode::setup_interfaces()
 {
   path_sub_ = create_subscription<nav_msgs::msg::Path>(
-    "path_input", rclcpp::QoS(10),
+    "path", rclcpp::QoS(10),
     std::bind(&TrajectoryPlannerNode::on_path, this, std::placeholders::_1));
 
-  RCLCPP_INFO(this->get_logger(), "trajectory_planner_node: path_planner subscription");
+  RCLCPP_INFO(this->get_logger(), "trajectory_planner_node: subscribed to path (from path_planner)");
     
   traj_pub_ = create_publisher<trajectory_msgs::msg::MultiDOFJointTrajectory>(
-    "trajectory_output", rclcpp::QoS(10));
+    "command/trajectory", rclcpp::QoS(10));
 
-  RCLCPP_INFO(this->get_logger(), "trajectory_planner_node: trajectory_planner publisher");
+  RCLCPP_INFO(this->get_logger(), "trajectory_planner_node: publishing on command/trajectory");
   
   status_pub_ = create_publisher<std_msgs::msg::String>(
-    "status", rclcpp::QoS(10));
+    "trajectory_status", rclcpp::QoS(10));
 
-  RCLCPP_INFO(this->get_logger(), "trajectory_planner_node: status publisher");
+  RCLCPP_INFO(this->get_logger(), "trajectory_planner_node: status publisher on trajectory_status");
 }
 
 void TrajectoryPlannerNode::on_path(const nav_msgs::msg::Path::SharedPtr msg)

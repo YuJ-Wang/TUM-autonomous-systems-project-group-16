@@ -5,9 +5,9 @@ from ament_index_python.packages import get_package_share_directory
 import os
 
 def generate_launch_description():
-    # Path to the Unity binary installed by ExternalProject into share/unity_bridge/unitysim
-    pkg_share = get_package_share_directory('unity_bridge')
-    unity_bin = os.path.join(pkg_share, 'unitysim', 'VNAV.x86_64')
+    # Path to the Unity binary installed into lib/simulation
+    pkg_prefix = get_package_share_directory('simulation')
+    unity_bin = os.path.join(pkg_prefix, '..', 'lib', 'simulation', 'Simulation.x86_64')
 
     vnav = ExecuteProcess(
         cmd=[unity_bin],
@@ -15,7 +15,7 @@ def generate_launch_description():
     )
 
     w_to_unity = Node(
-        package='unity_bridge',
+        package='simulation',
         executable='w_to_unity',
         name='w_to_unity',
         output='screen',
@@ -24,7 +24,7 @@ def generate_launch_description():
     )
 
     unity_state = Node(
-        package='unity_bridge',
+        package='simulation',
         executable='unity_state',
         name='unity_state',
         output='screen'

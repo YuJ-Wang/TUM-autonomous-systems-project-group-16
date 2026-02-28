@@ -85,7 +85,7 @@ install(DIRECTORY include/
 )
 
 # Install launch files
-install(DIRECTORY launch/ config/
+install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
 )
 

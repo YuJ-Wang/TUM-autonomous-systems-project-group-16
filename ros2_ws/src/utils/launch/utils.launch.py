@@ -1,60 +1,125 @@
 #!/usr/bin/env python3
+"""
+Utils launch file — master launch that brings up the full simulation stack.
+
+Includes:
+  1. simulation.launch.py   – Unity sim, unity_ros, w_to_unity, state corruptor,
+                               controller_node, static TFs
+  2. perception.launch.py   – depth_to_pointcloud, pointcloud_to_octomap
+  3. detection               – lantern_detector
+  4. path_planner.launch.py – path_planner_node
+  5. trajectory_planner.launch.py – trajectory_planner_node
+  6. controller.launch.py   – controller_node (standalone, if not in simulation)
+  7. mapping.launch.py      – (placeholder, TODO nodes)
+  8. state_machine.launch.py – (placeholder, TODO nodes)
+  9. perception_pipeline     – (placeholder, TODO nodes)
+  10. quadrotor_controller   – (placeholder, TODO nodes)
+  11. utils_node             – core utility node
+"""
 
 from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    ld = LaunchDescription()
+    use_sim_time = LaunchConfiguration('use_sim_time')
 
-    # core utility node
-    ld.add_action(Node(
-        package='utils', executable='utils_node', name='utils_node', output='screen'))
+    declared_args = [
+        DeclareLaunchArgument(
+            'use_sim_time', default_value='false',
+            description='Use simulation clock'),
+    ]
 
-    # mapping nodes
-    ld.add_action(Node(
-        package='mapping', executable='voxel_grid_mapper_node', name='voxel_grid_mapper_node', output='screen'))
-    ld.add_action(Node(
-        package='mapping', executable='global_map_publisher_node', name='global_map_publisher_node', output='screen'))
+    # ── 1. Simulation (Unity GUI + unity_ros + w_to_unity + TFs + corruptor) ──
+    simulation_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('simulation'), 'launch', 'simulation.launch.py'])
+        ),
+    )
 
-    # path planning
-    ld.add_action(Node(
-        package='path_planner', executable='path_planner_node', name='path_planner_node', output='screen'))
+    # ── 2. Perception (depth→pointcloud, pointcloud→octomap) ──
+    perception_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('perception'), 'launch', 'perception.launch.py'])
+        ),
+    )
 
-    # trajectory planning
-    ld.add_action(Node(
-        package='trajectory_planner', executable='trajectory_planner_node', name='trajectory_planner_node', output='screen'))
+    # ── 3. Detection (lantern detector) ──
+    detection_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('detection'), 'launch', 'lantern_detector.launch.py'])
+        ),
+    )
 
-    # perception nodes
-    ld.add_action(Node(
-        package='perception', executable='light_detection_node', name='light_detection_node', output='screen'))
+    # ── 4. Path Planner ──
+    path_planner_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('path_planner'), 'launch', 'path_planner.launch.py'])
+        ),
+        launch_arguments={'use_sim_time': use_sim_time}.items(),
+    )
 
-    # perception pipeline
-    ld.add_action(Node(
-        package='perception_pipeline', executable='semantic_camera_subscriber_node', name='semantic_camera_subscriber_node', output='screen'))
-    ld.add_action(Node(
-        package='perception_pipeline', executable='depth_to_pointcloud_node', name='depth_to_pointcloud_node', output='screen'))
-    ld.add_action(Node(
-        package='perception_pipeline', executable='object_detection_node', name='object_detection_node', output='screen'))
+    # ── 5. Trajectory Planner ──
+    trajectory_planner_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('trajectory_planner'), 'launch', 'trajectory_planner.launch.py'])
+        ),
+        launch_arguments={'use_sim_time': use_sim_time}.items(),
+    )
 
-    # simulation and bridge
-    ld.add_action(Node(
-        package='simulation', executable='w_to_unity', name='w_to_unity', output='screen'))
-    ld.add_action(Node(
-        package='simulation', executable='state_estimate_corruptor_node', name='state_estimate_corruptor_node', output='screen'))
-    ld.add_action(Node(
-        package='simulation', executable='unity_ros', name='unity_ros', output='screen'))
+    # ── 6. Mapping (placeholder — nodes TBD) ──
+    mapping_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('mapping'), 'launch', 'mapping.launch.py'])
+        ),
+    )
 
-    # state machine
-    ld.add_action(Node(
-        package='state_machine', executable='mission_state_machine_node', name='mission_state_machine_node', output='screen'))
+    # ── 7. State Machine (placeholder — nodes TBD) ──
+    state_machine_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('state_machine'), 'launch', 'state_machine.launch.py'])
+        ),
+    )
 
-    # quadrotor controller
-    ld.add_action(Node(
-        package='quadrotor_controller', executable='controller_interface_node', name='controller_interface_node', output='screen'))
+    # ── 8. Perception Pipeline (placeholder — nodes TBD) ──
+    perception_pipeline_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('perception_pipeline'), 'launch', 'perception_pipeline.launch.py'])
+        ),
+    )
 
-    # controller package
-    ld.add_action(Node(
-        package='controller_pkg', executable='controller_node', name='controller_node', output='screen'))
+    # ── 9. Quadrotor Controller (placeholder — nodes TBD) ──
+    quadrotor_controller_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('quadrotor_controller'), 'launch', 'quadrotor_controller.launch.py'])
+        ),
+    )
 
-    return ld
+    # ── 10. Utils node ──
+    utils_node = Node(
+        package='utils',
+        executable='utils_node',
+        name='utils_node',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
+    )
+
+    return LaunchDescription(
+        declared_args
+        + [
+            simulation_launch,
+            perception_launch,
+            detection_launch,
+            path_planner_launch,
+            trajectory_planner_launch,
+            mapping_launch,
+            state_machine_launch,
+            perception_pipeline_launch,
+            quadrotor_controller_launch,
+            utils_node,
+        ]
+    )

@@ -46,8 +46,11 @@ ExternalProject_Add(libsocket
              -DCMAKE_BUILD_TYPE:STRING=Release
              -DBUILD_SHARED_LIBS=ON
              -DCMAKE_POLICY_DEFAULT_CMP0077=NEW
+             -Wno-dev
   BUILD_COMMAND $(MAKE)
   INSTALL_COMMAND $(MAKE) install
+  LOG_CONFIGURE ON
+  LOG_BUILD ON
 )
 
 # Where ExternalProject will install headers and libs
@@ -107,17 +110,42 @@ target_link_libraries(unity_ros tcpimage)
 target_link_directories(unity_ros PRIVATE ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
 add_dependencies(unity_ros libsocket)
 
+add_executable(unity_state src/unity_state.cpp)
+ament_target_dependencies(unity_state
+  rclcpp
+  nav_msgs
+  geometry_msgs
+  tf2
+  tf2_ros
+)
+target_link_libraries(unity_state tcpimage)
+target_link_directories(unity_state PRIVATE ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
+add_dependencies(unity_state libsocket)
+
 # --- Install targets -------------------------------------
 install(TARGETS
   w_to_unity
   state_estimate_corruptor_node
   unity_ros
+  unity_state
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
 # Install all launch files
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}
+)
+
+# --- Install Unity Simulation binaries ---
+install(PROGRAMS
+  unity_sim/Simulation.x86_64
+  unity_sim/UnityPlayer.so
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+# Install Unity data folder (required for the GUI to run)
+install(DIRECTORY unity_sim/Simulation_Data
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 # --- Export and package ------------------------------------------------------

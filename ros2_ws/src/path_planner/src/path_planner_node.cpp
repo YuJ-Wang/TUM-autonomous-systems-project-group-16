@@ -23,10 +23,10 @@ PathPlannerNode::PathPlannerNode()
 void PathPlannerNode::setup_interfaces()
 {
   odom_sub_ = create_subscription<nav_msgs::msg::Odometry>(
-    "odometry/filtered", rclcpp::QoS(10),
+    "/current_state_est", rclcpp::QoS(10),
     std::bind(&PathPlannerNode::on_odometry, this, std::placeholders::_1));
   
-  RCLCPP_INFO(this->get_logger(), "path_planner_node: odometry subscription");
+  RCLCPP_INFO(this->get_logger(), "path_planner_node: odometry subscription on /current_state_est");
 
   goal_sub_ = create_subscription<geometry_msgs::msg::PoseStamped>(
     "goal_pose", rclcpp::QoS(10),
@@ -48,8 +48,8 @@ void PathPlannerNode::setup_interfaces()
   
   path_pub_ = create_publisher<nav_msgs::msg::Path>("path", rclcpp::QoS(10));
   RCLCPP_INFO(this->get_logger(), "path_planner_node: path publisher");
-  status_pub_ = create_publisher<std_msgs::msg::String>("status", rclcpp::QoS(10));
-  RCLCPP_INFO(this->get_logger(), "path_planner_node: status publisher");
+  status_pub_ = create_publisher<std_msgs::msg::String>("planner_status", rclcpp::QoS(10));
+  RCLCPP_INFO(this->get_logger(), "path_planner_node: status publisher on planner_status");
   
   RCLCPP_INFO(this->get_logger(), "path_planner_node initialized");
 }
