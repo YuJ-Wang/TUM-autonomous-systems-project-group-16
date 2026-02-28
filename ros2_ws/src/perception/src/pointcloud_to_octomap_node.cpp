@@ -98,7 +98,10 @@ void PointCloudToOctomapNode::pointcloud_callback(const sensor_msgs::msg::PointC
     sensor_msgs::PointCloud2ConstIterator<float> iter_y(*msg, "y");
     sensor_msgs::PointCloud2ConstIterator<float> iter_z(*msg, "z");
 
-    octomap::Pointcloud octomap_cloud;
+    // Clear the octree for real-time update (no historical records)
+    octree_->clear();
+    
+    size_t point_counter = 0;
 
     for (; iter_x != iter_x.end(); ++iter_x, ++iter_y, ++iter_z) {
         geometry_msgs::msg::PointStamped point_in, point_out;
@@ -115,28 +118,28 @@ void PointCloudToOctomapNode::pointcloud_callback(const sensor_msgs::msg::PointC
             std::pow(point_out.point.z - sensor_origin.z(), 2));
 
         if (range <= max_range_ && range > 0.1) {
-            octomap_cloud.push_back(point_out.point.x, point_out.point.y, point_out.point.z);
+            octomap::point3d point(point_out.point.x, point_out.point.y, point_out.point.z);
+            octree_->updateNode(point, true);
+            point_counter++;
         }
     }
 
-    if (octomap_cloud.size() > 0) {
-        octree_->insertPointCloud(octomap_cloud, sensor_origin, max_range_, false, true);
-        point_count_ += octomap_cloud.size();
+    octree_->updateInnerOccupancy();
+    octree_->prune();
+
+    if (point_counter > 0) {
+        point_count_ = point_counter;
         update_count_++;
 
         RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 5000,
-                           "Inserted %zu points (Total: %d updates, %ld points)",
-                           octomap_cloud.size(), update_count_, point_count_);
+                           "Current frame: %zu occupied voxels", point_counter);
     }
 }
 
 void PointCloudToOctomapNode::publish_octomap()
 {
     if (update_count_ == 0) return;
-
-    octree_->prune();
-    octree_->updateInnerOccupancy();
-
+    
     octomap_msgs::msg::Octomap map_msg;
     map_msg.header.stamp = this->now();
     map_msg.header.frame_id = frame_id_;
@@ -144,7 +147,7 @@ void PointCloudToOctomapNode::publish_octomap()
     if (octomap_msgs::fullMapToMsg(*octree_, map_msg)) {
         octomap_pub_->publish(map_msg);
         RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 10000,
-                           "Published OctoMap (%zu nodes)", octree_->size());
+                           "Published real-time OctoMap (%zu nodes)", octree_->size());
     }
 
     publish_markers();
