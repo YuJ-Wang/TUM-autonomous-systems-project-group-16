@@ -1,0 +1,35 @@
+[0.032s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
+[0.209s] [ 33%] Built target depth_to_pointcloud
+[0.214s] [ 66%] Built target pointcloud_to_octomap
+[0.227s] [ 83%] [32mBuilding CXX object CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o[0m
+[41.072s] [100%] [32m[1mLinking CXX executable lantern_detector[0m
+[43.906s] [100%] Built target lantern_detector
+[43.946s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg -- -j8 -l8
+[43.977s] Invoking command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg
+[44.008s] -- Install configuration: ""
+[44.014s] -- Installing: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/perception_pkg/depth_to_pointcloud
+[44.040s] -- Set non-toolchain portion of runtime path of "/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/perception_pkg/depth_to_pointcloud" to ""
+[44.040s] -- Installing: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/perception_pkg/pointcloud_to_octomap
+[44.060s] -- Set non-toolchain portion of runtime path of "/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/perception_pkg/pointcloud_to_octomap" to ""
+[44.061s] -- Installing: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/perception_pkg/lantern_detector
+[44.085s] -- Set non-toolchain portion of runtime path of "/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/lib/perception_pkg/lantern_detector" to ""
+[44.086s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg//launch
+[44.086s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg//launch/lantern_detector.launch.py
+[44.087s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg//launch/perception.launch.py
+[44.087s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg//launch/octomap.launch.py
+[44.087s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/ament_index/resource_index/package_run_dependencies/perception_pkg
+[44.087s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/ament_index/resource_index/parent_prefix_path/perception_pkg
+[44.087s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/environment/ament_prefix_path.sh
+[44.088s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/environment/ament_prefix_path.dsv
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/environment/path.sh
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/environment/path.dsv
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/local_setup.bash
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/local_setup.sh
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/local_setup.zsh
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/local_setup.dsv
+[44.089s] -- Installing: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/package.dsv
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/ament_index/resource_index/packages/perception_pkg
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/cmake/perception_pkgConfig.cmake
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/cmake/perception_pkgConfig-version.cmake
+[44.089s] -- Up-to-date: /home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg/share/perception_pkg/package.xml
+[44.094s] Invoked command in '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg

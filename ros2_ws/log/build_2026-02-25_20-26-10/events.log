@@ -1,0 +1,200 @@
+[0.000000] (-) TimerEvent: {}
+[0.000476] (-) JobUnselected: {'identifier': 'controller_pkg'}
+[0.000551] (-) JobUnselected: {'identifier': 'mav_msgs'}
+[0.000570] (-) JobUnselected: {'identifier': 'mav_planning_msgs'}
+[0.000584] (-) JobUnselected: {'identifier': 'simulation'}
+[0.000609] (perception_pkg) JobQueued: {'identifier': 'perception_pkg', 'dependencies': OrderedDict()}
+[0.002916] (perception_pkg) JobStarted: {'identifier': 'perception_pkg'}
+[0.026900] (perception_pkg) JobProgress: {'identifier': 'perception_pkg', 'progress': 'cmake'}
+[0.027000] (perception_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg', '-DCMAKE_INSTALL_PREFIX=/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg'], 'cwd': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jiacheng', 'FONTCONFIG_PATH': '/etc/fonts', 'GIO_MODULE_DIR': '/home/jiacheng/snap/code/common/.cache/gio-modules', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/snap/code/220/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'GTK_EXE_PREFIX_VSCODE_SNAP_ORIG': '', 'GDK_BACKEND_VSCODE_SNAP_ORIG': '', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/jiacheng', 'CHROME_DESKTOP': 'code.desktop', 'LOCPATH_VSCODE_SNAP_ORIG': '', 'OLDPWD': '/home/jiacheng/autonomoussystems2025/ros2_ws', 'TERM_PROGRAM_VERSION': '1.108.2', 'DESKTOP_SESSION': 'ubuntu', 'GTK_PATH': '/snap/code/220/usr/lib/x86_64-linux-gnu/gtk-3.0', 'XDG_DATA_HOME_VSCODE_SNAP_ORIG': '', 'GTK_IM_MODULE_FILE': '/home/jiacheng/snap/code/common/.cache/immodules/immodules.cache', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SDL_IM_MODULE': 'fcitx', 'GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG': '', 'VSCODE_GIT_ASKPASS_MAIN': '/snap/code/220/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/snap/code/220/usr/share/code/code', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2255', 'BUNDLED_DEBUGPY_PATH': '/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=cdf782e65c9f8971820fb0f7699f2448', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'jiacheng', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'XDG_DATA_DIRS_VSCODE_SNAP_ORIG': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'USERNAME': 'jiacheng', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'HISTCONTROL': 'ignorespace', 'PATH': '/home/jiacheng/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/jiacheng/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/ros/jazzy/bin:/home/jiacheng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/jiacheng-VMware-Virtual-Platform:@/tmp/.ICE-unix/2255,unix/jiacheng-VMware-Virtual-Platform:/tmp/.ICE-unix/2255', 'GTK_EXE_PREFIX': '/snap/code/220/usr', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/7be3f578_9bf1_4b2c_9fd9_7dc79cd386c9', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LOCPATH': '/snap/code/220/usr/lib/locale', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2455b87b63add1ef.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/jiacheng/.config/Code/User/workspaceStorage/4f8e66b4b5b24aa4c2eff4f48aff7919/ms-python.python/pythonrc.py', 'GIO_MODULE_DIR_VSCODE_SNAP_ORIG': '', 'XDG_DATA_HOME': '/home/jiacheng/snap/code/220/.local/share', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WYX0K3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-009a50305f.sock', 'GNOME_TERMINAL_SERVICE': ':1.122', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/jiacheng/snap/code/220/.local/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GTK_PATH_VSCODE_SNAP_ORIG': '', 'FONTCONFIG_FILE': '/etc/fonts/fonts.conf', 'GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG': '', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'xim', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=cdf782e65c9f8971820fb0f7699f2448', 'XDG_DATA_DIRS': '/home/jiacheng/snap/code/220/.local/share:/home/jiacheng/snap/code/220:/snap/code/220/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.085301] (perception_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099898] (-) TimerEvent: {}
+[0.200660] (-) TimerEvent: {}
+[0.301017] (-) TimerEvent: {}
+[0.401601] (-) TimerEvent: {}
+[0.502170] (-) TimerEvent: {}
+[0.602980] (-) TimerEvent: {}
+[0.671998] (perception_pkg) StdoutLine: {'line': b'-- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.705466] (-) TimerEvent: {}
+[0.713756] (perception_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.723241] (perception_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.742413] (perception_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.767800] (perception_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.805921] (-) TimerEvent: {}
+[0.849636] (perception_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.852276] (perception_pkg) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.906714] (-) TimerEvent: {}
+[0.986764] (perception_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.008412] (-) TimerEvent: {}
+[1.082621] (perception_pkg) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[1.109335] (-) TimerEvent: {}
+[1.147072] (perception_pkg) StdoutLine: {'line': b'-- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)\n'}
+[1.161664] (perception_pkg) StdoutLine: {'line': b'-- Found octomap_msgs: 2.0.1 (/opt/ros/jazzy/share/octomap_msgs/cmake)\n'}
+[1.187734] (perception_pkg) StdoutLine: {'line': b'-- Found tf2_ros: 0.36.16 (/opt/ros/jazzy/share/tf2_ros/cmake)\n'}
+[1.210850] (-) TimerEvent: {}
+[1.313117] (-) TimerEvent: {}
+[1.335790] (perception_pkg) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.16 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[1.339683] (perception_pkg) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[1.341400] (perception_pkg) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.343015] (perception_pkg) StdoutLine: {'line': b'-- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)\n'}
+[1.387663] (perception_pkg) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[1.413912] (-) TimerEvent: {}
+[1.514897] (-) TimerEvent: {}
+[1.616511] (-) TimerEvent: {}
+[1.669396] (perception_pkg) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.671749] (perception_pkg) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.673936] (perception_pkg) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/include>\n'}
+[1.674252] (perception_pkg) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.677302] (perception_pkg) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[1.677715] (perception_pkg) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[1.678947] (perception_pkg) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.679315] (perception_pkg) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[1.680805] (perception_pkg) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.682579] (perception_pkg) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[1.684237] (perception_pkg) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.684467] (perception_pkg) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.685251] (perception_pkg) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.687233] (perception_pkg) StdoutLine: {'line': b'-- Configuring done (1.6s)\n'}
+[1.716784] (-) TimerEvent: {}
+[1.753784] (perception_pkg) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.772187] (perception_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg\n'}
+[1.807840] (perception_pkg) CommandEnded: {'returncode': 0}
+[1.808488] (perception_pkg) JobProgress: {'identifier': 'perception_pkg', 'progress': 'build'}
+[1.808513] (perception_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', '--', '-j8', '-l8'], 'cwd': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jiacheng', 'FONTCONFIG_PATH': '/etc/fonts', 'GIO_MODULE_DIR': '/home/jiacheng/snap/code/common/.cache/gio-modules', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/snap/code/220/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'GTK_EXE_PREFIX_VSCODE_SNAP_ORIG': '', 'GDK_BACKEND_VSCODE_SNAP_ORIG': '', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg/lib:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/jiacheng', 'CHROME_DESKTOP': 'code.desktop', 'LOCPATH_VSCODE_SNAP_ORIG': '', 'OLDPWD': '/home/jiacheng/autonomoussystems2025/ros2_ws', 'TERM_PROGRAM_VERSION': '1.108.2', 'DESKTOP_SESSION': 'ubuntu', 'GTK_PATH': '/snap/code/220/usr/lib/x86_64-linux-gnu/gtk-3.0', 'XDG_DATA_HOME_VSCODE_SNAP_ORIG': '', 'GTK_IM_MODULE_FILE': '/home/jiacheng/snap/code/common/.cache/immodules/immodules.cache', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SDL_IM_MODULE': 'fcitx', 'GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG': '', 'VSCODE_GIT_ASKPASS_MAIN': '/snap/code/220/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/snap/code/220/usr/share/code/code', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2255', 'BUNDLED_DEBUGPY_PATH': '/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=cdf782e65c9f8971820fb0f7699f2448', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'jiacheng', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'XDG_DATA_DIRS_VSCODE_SNAP_ORIG': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'USERNAME': 'jiacheng', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'HISTCONTROL': 'ignorespace', 'PATH': '/home/jiacheng/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/jiacheng/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/opt/ros/jazzy/bin:/home/jiacheng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/jiacheng-VMware-Virtual-Platform:@/tmp/.ICE-unix/2255,unix/jiacheng-VMware-Virtual-Platform:/tmp/.ICE-unix/2255', 'GTK_EXE_PREFIX': '/snap/code/220/usr', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/7be3f578_9bf1_4b2c_9fd9_7dc79cd386c9', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LOCPATH': '/snap/code/220/usr/lib/locale', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/jiacheng/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2455b87b63add1ef.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/jiacheng/.config/Code/User/workspaceStorage/4f8e66b4b5b24aa4c2eff4f48aff7919/ms-python.python/pythonrc.py', 'GIO_MODULE_DIR_VSCODE_SNAP_ORIG': '', 'XDG_DATA_HOME': '/home/jiacheng/snap/code/220/.local/share', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WYX0K3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-009a50305f.sock', 'GNOME_TERMINAL_SERVICE': ':1.122', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/jiacheng/snap/code/220/.local/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GTK_PATH_VSCODE_SNAP_ORIG': '', 'FONTCONFIG_FILE': '/etc/fonts/fonts.conf', 'GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG': '', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/jiacheng/autonomoussystems2025/ros2_ws/build/perception_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'xim', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=cdf782e65c9f8971820fb0f7699f2448', 'XDG_DATA_DIRS': '/home/jiacheng/snap/code/220/.local/share:/home/jiacheng/snap/code/220:/snap/code/220/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs/lib/python3.12/site-packages:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/jiacheng/autonomoussystems2025/ros2_ws/install/simulation:/home/jiacheng/autonomoussystems2025/ros2_ws/install/perception_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_planning_msgs:/home/jiacheng/autonomoussystems2025/ros2_ws/install/controller_pkg:/home/jiacheng/autonomoussystems2025/ros2_ws/install/mav_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[1.817480] (-) TimerEvent: {}
+[1.917995] (-) TimerEvent: {}
+[1.984437] (perception_pkg) StdoutLine: {'line': b'[ 33%] Built target depth_to_pointcloud\n'}
+[1.990790] (perception_pkg) StdoutLine: {'line': b'[ 83%] Built target pointcloud_to_octomap\n'}
+[1.991105] (perception_pkg) StdoutLine: {'line': b'[ 83%] Building CXX object CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o\n'}
+[2.018713] (-) TimerEvent: {}
+[2.119541] (-) TimerEvent: {}
+[2.220889] (-) TimerEvent: {}
+[2.321433] (-) TimerEvent: {}
+[2.421926] (-) TimerEvent: {}
+[2.522719] (-) TimerEvent: {}
+[2.623525] (-) TimerEvent: {}
+[2.724072] (-) TimerEvent: {}
+[2.824886] (-) TimerEvent: {}
+[2.925581] (-) TimerEvent: {}
+[3.026334] (-) TimerEvent: {}
+[3.127084] (-) TimerEvent: {}
+[3.227785] (-) TimerEvent: {}
+[3.328894] (-) TimerEvent: {}
+[3.431118] (-) TimerEvent: {}
+[3.533818] (-) TimerEvent: {}
+[3.634505] (-) TimerEvent: {}
+[3.735283] (-) TimerEvent: {}
+[3.836174] (-) TimerEvent: {}
+[3.937069] (-) TimerEvent: {}
+[4.037637] (-) TimerEvent: {}
+[4.138577] (-) TimerEvent: {}
+[4.239641] (-) TimerEvent: {}
+[4.340368] (-) TimerEvent: {}
+[4.441446] (-) TimerEvent: {}
+[4.542167] (-) TimerEvent: {}
+[4.642589] (-) TimerEvent: {}
+[4.743551] (-) TimerEvent: {}
+[4.843955] (-) TimerEvent: {}
+[4.944603] (-) TimerEvent: {}
+[5.045518] (-) TimerEvent: {}
+[5.146513] (-) TimerEvent: {}
+[5.249980] (-) TimerEvent: {}
+[5.350519] (-) TimerEvent: {}
+[5.451266] (-) TimerEvent: {}
+[5.552135] (-) TimerEvent: {}
+[5.653016] (-) TimerEvent: {}
+[5.753764] (-) TimerEvent: {}
+[5.854331] (-) TimerEvent: {}
+[5.955856] (-) TimerEvent: {}
+[6.056496] (-) TimerEvent: {}
+[6.157030] (-) TimerEvent: {}
+[6.257624] (-) TimerEvent: {}
+[6.358526] (-) TimerEvent: {}
+[6.459737] (-) TimerEvent: {}
+[6.562465] (-) TimerEvent: {}
+[6.663480] (-) TimerEvent: {}
+[6.764353] (-) TimerEvent: {}
+[6.865132] (-) TimerEvent: {}
+[6.966102] (-) TimerEvent: {}
+[7.067553] (-) TimerEvent: {}
+[7.168147] (-) TimerEvent: {}
+[7.268878] (-) TimerEvent: {}
+[7.369483] (-) TimerEvent: {}
+[7.470615] (-) TimerEvent: {}
+[7.571592] (-) TimerEvent: {}
+[7.673611] (-) TimerEvent: {}
+[7.776900] (-) TimerEvent: {}
+[7.877931] (-) TimerEvent: {}
+[7.979270] (-) TimerEvent: {}
+[8.080217] (-) TimerEvent: {}
+[8.180853] (-) TimerEvent: {}
+[8.281522] (-) TimerEvent: {}
+[8.382030] (-) TimerEvent: {}
+[8.484414] (-) TimerEvent: {}
+[8.585109] (-) TimerEvent: {}
+[8.686005] (-) TimerEvent: {}
+[8.789776] (-) TimerEvent: {}
+[8.890495] (-) TimerEvent: {}
+[8.992429] (-) TimerEvent: {}
+[9.092864] (-) TimerEvent: {}
+[9.193617] (-) TimerEvent: {}
+[9.294908] (-) TimerEvent: {}
+[9.397711] (-) TimerEvent: {}
+[9.498257] (-) TimerEvent: {}
+[9.598953] (-) TimerEvent: {}
+[9.700202] (-) TimerEvent: {}
+[9.801761] (-) TimerEvent: {}
+[9.902386] (-) TimerEvent: {}
+[10.002961] (-) TimerEvent: {}
+[10.104121] (-) TimerEvent: {}
+[10.208020] (-) TimerEvent: {}
+[10.308580] (-) TimerEvent: {}
+[10.409216] (-) TimerEvent: {}
+[10.510877] (-) TimerEvent: {}
+[10.613307] (-) TimerEvent: {}
+[10.714517] (-) TimerEvent: {}
+[10.815477] (-) TimerEvent: {}
+[10.918360] (-) TimerEvent: {}
+[11.018827] (-) TimerEvent: {}
+[11.119762] (-) TimerEvent: {}
+[11.220644] (-) TimerEvent: {}
+[11.321398] (-) TimerEvent: {}
+[11.423156] (-) TimerEvent: {}
+[11.524247] (-) TimerEvent: {}
+[11.624747] (-) TimerEvent: {}
+[11.725720] (-) TimerEvent: {}
+[11.826307] (-) TimerEvent: {}
+[11.927159] (-) TimerEvent: {}
+[12.009897] (perception_pkg) StderrLine: {'line': b'/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp: In member function \xe2\x80\x98std::vector<LanternDetectorNode::LanternDetection> LanternDetectorNode::detectLanterns(const cv::Mat&, cv::Mat&)\xe2\x80\x99:\n'}
+[12.010426] (perception_pkg) StderrLine: {'line': b'/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:148:73: warning: comparison of integer expressions of different signedness: \xe2\x80\x98std::vector<LanternDetectorNode::LanternDetection>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} and \xe2\x80\x98int\xe2\x80\x99 [-Wsign-compare]\n'}
+[12.010493] (perception_pkg) StderrLine: {'line': b'  148 |         for (size_t i = 0; i < color_ranges.size() && detections.size() < max_lanterns_; ++i) {\n'}
+[12.010537] (perception_pkg) StderrLine: {'line': b'      |                                                       ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~\n'}
+[12.027391] (-) TimerEvent: {}
+[12.028067] (perception_pkg) StderrLine: {'line': b'/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp: In member function \xe2\x80\x98void LanternDetectorNode::publishDetections(const std::vector<LanternDetection>&, const std_msgs::msg::Header&)\xe2\x80\x99:\n'}
+[12.028438] (perception_pkg) StderrLine: {'line': b'/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:204:56: warning: unused parameter \xe2\x80\x98header\xe2\x80\x99 [-Wunused-parameter]\n'}
+[12.028498] (perception_pkg) StderrLine: {'line': b'  204 |                           const std_msgs::msg::Header& header)\n'}
+[12.028546] (perception_pkg) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~\n'}
+[12.128522] (-) TimerEvent: {}
+[12.229132] (-) TimerEvent: {}
+[12.331825] (-) TimerEvent: {}
+[12.432564] (-) TimerEvent: {}
+[12.534844] (-) TimerEvent: {}
+[12.636222] (-) TimerEvent: {}
+[12.736950] (-) TimerEvent: {}
+[12.837540] (-) TimerEvent: {}
+[12.939259] (-) TimerEvent: {}
+[13.040463] (-) TimerEvent: {}
+[13.141303] (-) TimerEvent: {}
+[13.242278] (-) TimerEvent: {}
+[13.342667] (-) TimerEvent: {}
+[13.443885] (-) TimerEvent: {}
+[13.545791] (-) TimerEvent: {}
+[13.612396] (perception_pkg) StderrLine: {'line': b'gmake[2]: *** wait: No child processes.  Stop.\n'}
+[13.612877] (perception_pkg) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[13.612930] (perception_pkg) StderrLine: {'line': b'gmake[2]: *** wait: No child processes.  Stop.\n'}
+[13.615529] (perception_pkg) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/lantern_detector.dir/all] Error 2\n'}
+[13.615808] (perception_pkg) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[13.646724] (-) TimerEvent: {}
+[13.700769] (perception_pkg) CommandEnded: {'returncode': -2}
+[13.723995] (perception_pkg) JobEnded: {'identifier': 'perception_pkg', 'rc': 'SIGINT'}
+[13.734969] (-) EventReactorShutdown: {}

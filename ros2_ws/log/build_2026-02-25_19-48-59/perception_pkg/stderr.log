@@ -1,0 +1,38 @@
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:275:36: error: lambda-expression in unevaluated context only available with ‘-std=c++20’ or ‘-std=gnu++20’
+  275 |     std::set<cv::Point2f, decltype([](const cv::Point2f& a, const cv::Point2f& b) {
+      |                                    ^
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:278:7: error: template argument 2 is invalid
+  278 |     })> detected_lanterns_;
+      |       ^
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp: In member function ‘std::vector<LanternDetectorNode::LanternDetection> LanternDetectorNode::detectLanterns(const cv::Mat&, cv::Mat&)’:
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:148:73: warning: comparison of integer expressions of different signedness: ‘std::vector<LanternDetectorNode::LanternDetection>::size_type’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+  148 |         for (size_t i = 0; i < color_ranges.size() && detections.size() < max_lanterns_; ++i) {
+      |                                                       ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:170:90: error: request for member ‘size’ in ‘((LanternDetectorNode*)this)->LanternDetectorNode::detected_lanterns_’, which is of non-class type ‘int’
+  170 |                         detection.label = "Lantern_" + std::to_string(detected_lanterns_.size() + 1);
+      |                                                                                          ^~~~
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:175:48: error: request for member ‘insert’ in ‘((LanternDetectorNode*)this)->LanternDetectorNode::detected_lanterns_’, which is of non-class type ‘int’
+  175 |                             detected_lanterns_.insert(detection.center);
+      |                                                ^~~~~~
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp: In member function ‘bool LanternDetectorNode::isNewLantern(const cv::Point2f&)’:
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:194:37: error: ‘begin’ was not declared in this scope; did you mean ‘std::begin’?
+  194 |         for (const auto& existing : detected_lanterns_) {
+      |                                     ^~~~~~~~~~~~~~~~~~
+      |                                     std::begin
+In file included from /usr/include/c++/13/string:53,
+                 from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:18,
+                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,
+                 from /home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:1:
+/usr/include/c++/13/bits/range_access.h:114:37: note: ‘std::begin’ declared here
+  114 |   template<typename _Tp> const _Tp* begin(const valarray<_Tp>&) noexcept;
+      |                                     ^~~~~
+/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:194:37: error: ‘end’ was not declared in this scope; did you mean ‘std::end’?
+  194 |         for (const auto& existing : detected_lanterns_) {
+      |                                     ^~~~~~~~~~~~~~~~~~
+      |                                     std::end
+/usr/include/c++/13/bits/range_access.h:116:37: note: ‘std::end’ declared here
+  116 |   template<typename _Tp> const _Tp* end(const valarray<_Tp>&) noexcept;
+      |                                     ^~~
+gmake[2]: *** [CMakeFiles/lantern_detector.dir/build.make:76: CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/lantern_detector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
