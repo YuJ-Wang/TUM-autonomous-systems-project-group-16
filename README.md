@@ -27,7 +27,7 @@ Clone the repository and enter the workspace:
 
 ```bash
 git clone https://gitlab.lrz.de/00000000014C07CD/autosys13.git
-cd autonomoussystems2025/ros2_ws
+cd autosys13/ros2_ws
 ```
 
 Install dependencies:
