@@ -27,7 +27,22 @@ public:
     px = stream_reader.ReadFloat();
     py = stream_reader.ReadFloat();
     pz = stream_reader.ReadFloat();
-    
+
+    // Normalise to spawn-relative coordinates.
+    // The Unity scene origin is far from the drone spawn point; all downstream
+    // consumers (state machine, path planner, mapper) work in spawn-relative
+    // metres.  Record the very first pose as "home" and subtract it from every
+    // subsequent pose so that spawn == (0, 0, 0) in the ROS world frame.
+    if (!origin_set_) {
+      home_px_ = px;
+      home_py_ = py;
+      home_pz_ = pz;
+      origin_set_ = true;
+    }
+    px -= home_px_;
+    py -= home_py_;
+    pz -= home_pz_;
+
     qx = stream_reader.ReadFloat();
     qy = stream_reader.ReadFloat();
     qz = stream_reader.ReadFloat();
@@ -97,4 +112,10 @@ private:
   std::unordered_map<std::string, rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr> twist_publishers_;
   std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
   rclcpp::Node::SharedPtr node_;
+
+  // Spawn-relative origin (Unity coordinate space, before y<->z swap).
+  bool origin_set_ = false;
+  float home_px_ = 0.0f;
+  float home_py_ = 0.0f;
+  float home_pz_ = 0.0f;
 };

@@ -1,4 +1,7 @@
-string file_path
+string output_path
+string format
+bool include_color
 ---
 bool success
+string saved_path
 string message

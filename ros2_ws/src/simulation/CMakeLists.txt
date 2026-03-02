@@ -131,8 +131,8 @@ install(TARGETS
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
-# Install all launch files
-install(DIRECTORY launch
+# Install all launch files and config (including .rviz)
+install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
 )
 

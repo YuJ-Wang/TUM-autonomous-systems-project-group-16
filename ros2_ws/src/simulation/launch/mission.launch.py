@@ -41,11 +41,13 @@ def generate_launch_description():
     start_simulator = LaunchConfiguration("start_simulator")
     simulator_binary = LaunchConfiguration("simulator_binary")
     enable_perception = LaunchConfiguration("enable_perception")
+    corrupt_state_estimate = LaunchConfiguration("corrupt_state_estimate")
 
     declared_args = [
         DeclareLaunchArgument("start_simulator", default_value="true"),
         DeclareLaunchArgument("simulator_binary", default_value=_default_simulator_binary()),
         DeclareLaunchArgument("enable_perception", default_value="true"),
+        DeclareLaunchArgument("corrupt_state_estimate", default_value="true"),
     ]
 
     simulation_launch = IncludeLaunchDescription(
@@ -55,6 +57,7 @@ def generate_launch_description():
         launch_arguments={
             "start_simulator": start_simulator,
             "simulator_binary": simulator_binary,
+            "corrupt_state_estimate": corrupt_state_estimate,
         }.items(),
     )
 

@@ -28,6 +28,7 @@ sudo apt update
 echo ""
 echo "Step 2: Installing ROS2 Jazzy dependencies..."
 sudo apt install -y \
+    python3-colcon-common-extensions \
     ros-jazzy-cv-bridge \
     ros-jazzy-vision-opencv \
     ros-jazzy-octomap \
@@ -35,7 +36,11 @@ sudo apt install -y \
     ros-jazzy-octomap-ros \
     ros-jazzy-tf2-ros \
     ros-jazzy-tf2-geometry-msgs \
-    ros-jazzy-visualization-msgs
+    ros-jazzy-tf2-eigen \
+    ros-jazzy-visualization-msgs \
+    ros-jazzy-trajectory-msgs \
+    ros-jazzy-eigen3-cmake-module \
+    ros-jazzy-message-filters
 
 echo ""
 echo "Step 3: Installing system dependencies..."
@@ -61,11 +66,10 @@ echo ""
 echo "Next steps:"
 echo "1. Build the workspace:"
 echo "   cd ros2_ws"
-echo "   colcon build"
+echo "   source /opt/ros/jazzy/setup.bash"
+echo "   colcon build --symlink-install"
 echo "   source install/setup.bash"
 echo ""
-echo "2. Make start_rviz2.sh executable:"
-echo "   chmod +x start_rviz2.sh"
-echo ""
-echo "3. Follow README.md to run the simulation"
+echo "2. Launch the full mission:"
+echo "   ros2 launch simulation subterrain_challenge.launch.py"
 echo "=================================================="

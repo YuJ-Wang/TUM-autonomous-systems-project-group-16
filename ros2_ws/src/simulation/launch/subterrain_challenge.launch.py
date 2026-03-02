@@ -7,12 +7,23 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetE
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 
 def _default_simulator_binary():
     this_file = Path(__file__).resolve()
     candidates = []
+
+    # Check unity_sim/ next to this launch file's package directory
+    # (i.e. src/simulation/unity_sim/Simulation.x86_64)
+    if len(this_file.parents) > 1:
+        pkg_dir = this_file.parents[1]
+        candidates.extend([
+            pkg_dir / "unity_sim" / "Simulation.x86_64",
+            pkg_dir / "unity_sim" / "Simulation_HQ.x86_64",
+            pkg_dir / "unity_sim" / "Simulation_LQ.x86_64",
+        ])
 
     if len(this_file.parents) > 4:
         repo_root = this_file.parents[4]
@@ -42,6 +53,7 @@ def generate_launch_description():
     start_simulator = LaunchConfiguration("start_simulator")
     simulator_binary = LaunchConfiguration("simulator_binary")
     enable_perception = LaunchConfiguration("enable_perception")
+    corrupt_state_estimate = LaunchConfiguration("corrupt_state_estimate")
 
     # New scaffold package controls.
     use_sim_time = LaunchConfiguration("use_sim_time")
@@ -53,20 +65,27 @@ def generate_launch_description():
     enable_quadrotor_interface = LaunchConfiguration("enable_quadrotor_interface")
     enable_state_machine = LaunchConfiguration("enable_state_machine")
     enable_utils = LaunchConfiguration("enable_utils")
+    enable_detection = LaunchConfiguration("enable_detection")
+    enable_rviz = LaunchConfiguration("enable_rviz")
+    enable_rqt = LaunchConfiguration("enable_rqt")
 
     declared_args = [
         DeclareLaunchArgument("start_simulator", default_value="true"),
         DeclareLaunchArgument("simulator_binary", default_value=_default_simulator_binary()),
         DeclareLaunchArgument("enable_perception", default_value="true"),
+        DeclareLaunchArgument("corrupt_state_estimate", default_value="true"),
         DeclareLaunchArgument("use_sim_time", default_value="false"),
-        DeclareLaunchArgument("planner_method", default_value="rrt_star"),
+        DeclareLaunchArgument("planner_method", default_value="astar"),
         DeclareLaunchArgument("enable_mapping", default_value="true"),
         DeclareLaunchArgument("enable_path_planner", default_value="true"),
         DeclareLaunchArgument("enable_trajectory_planner", default_value="true"),
         DeclareLaunchArgument("enable_perception_pipeline", default_value="true"),
         DeclareLaunchArgument("enable_quadrotor_interface", default_value="true"),
         DeclareLaunchArgument("enable_state_machine", default_value="true"),
-        DeclareLaunchArgument("enable_utils", default_value="true"),
+        DeclareLaunchArgument("enable_utils", default_value="false"),
+        DeclareLaunchArgument("enable_detection", default_value="true"),
+        DeclareLaunchArgument("enable_rviz", default_value="true"),
+        DeclareLaunchArgument("enable_rqt", default_value="false"),
     ]
 
     # Base stack from the existing simulation package.
@@ -78,6 +97,7 @@ def generate_launch_description():
             "start_simulator": start_simulator,
             "simulator_binary": simulator_binary,
             "enable_perception": enable_perception,
+            "corrupt_state_estimate": corrupt_state_estimate,
         }.items(),
     )
 
@@ -143,11 +163,36 @@ def generate_launch_description():
         launch_arguments={"use_sim_time": use_sim_time}.items(),
     )
 
+    detection_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare("detection"), "launch", "lantern_detector.launch.py"])
+        ),
+        condition=IfCondition(enable_detection),
+    )
+
+    rviz_node = Node(
+        package="rviz2",
+        executable="rviz2",
+        name="rviz2",
+        arguments=[
+            "-d",
+            PathJoinSubstitution([FindPackageShare("simulation"), "config", "subterrain.rviz"]),
+        ],
+        condition=IfCondition(enable_rviz),
+        output="screen",
+    )
+
+    rqt_node = Node(
+        package="rqt_graph",
+        executable="rqt_graph",
+        name="rqt_graph",
+        condition=IfCondition(enable_rqt),
+        output="screen",
+    )
+
     return LaunchDescription(
         declared_args
         + [
-            # Ensure system libstdc++ is used so Anaconda's older version does not
-            # shadow the GLIBCXX_3.4.32 symbol required by ROS 2 Jazzy libraries.
             SetEnvironmentVariable(
                 "LD_PRELOAD", "/usr/lib/x86_64-linux-gnu/libstdc++.so.6"
             ),
@@ -157,7 +202,10 @@ def generate_launch_description():
             TimerAction(period=3.0, actions=[trajectory_planner_launch]),
             TimerAction(period=3.5, actions=[quadrotor_interface_launch]),
             TimerAction(period=4.0, actions=[perception_pipeline_launch]),
+            TimerAction(period=4.5, actions=[detection_launch]),
             TimerAction(period=5.0, actions=[state_machine_launch]),
+            TimerAction(period=6.0, actions=[rviz_node]),
+            TimerAction(period=6.5, actions=[rqt_node]),
             utils_launch,
         ]
     )

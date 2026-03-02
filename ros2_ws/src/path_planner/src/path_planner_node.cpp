@@ -1,246 +1,370 @@
-#include "path_planner/path_planner_node.hpp"
+#include <algorithm>
+#include <array>
 #include <cmath>
+#include <limits>
 #include <queue>
+#include <sstream>
 #include <unordered_map>
-#include <octomap/OcTree.h>
-#include <octomap_msgs/conversions.h>
+
+#include "path_planner/path_planner_node.hpp"
 
 namespace path_planner {
 
-PathPlannerNode::PathPlannerNode() : Node("path_planner_node")
-{
-  resolution_     = declare_parameter("map_resolution",    0.15);
-  safety_margin_  = declare_parameter("safety_margin",     0.5);
-  max_expansions_ = declare_parameter("max_expansions",    100000);
-  waypoint_step_  = declare_parameter("waypoint_step",     3);
+namespace {
+constexpr int64_t kVoxelBias = 1 << 20;
+constexpr int64_t kVoxelMask = (1 << 21) - 1;
+}  // namespace
 
-  odom_sub_ = create_subscription<nav_msgs::msg::Odometry>(
+int64_t PathPlannerNode::pack_key(int x, int y, int z) {
+  const int64_t xx = static_cast<int64_t>(x) + kVoxelBias;
+  const int64_t yy = static_cast<int64_t>(y) + kVoxelBias;
+  const int64_t zz = static_cast<int64_t>(z) + kVoxelBias;
+  return (xx << 42) | (yy << 21) | zz;
+}
+
+PathPlannerNode::VoxelCoord PathPlannerNode::unpack_key(int64_t key) {
+  VoxelCoord out;
+  out.x = static_cast<int>((key >> 42) & kVoxelMask) - static_cast<int>(kVoxelBias);
+  out.y = static_cast<int>((key >> 21) & kVoxelMask) - static_cast<int>(kVoxelBias);
+  out.z = static_cast<int>(key & kVoxelMask) - static_cast<int>(kVoxelBias);
+  return out;
+}
+
+PathPlannerNode::PathPlannerNode()
+: Node("path_planner_node") {
+  interpolation_points_ = this->declare_parameter<int>("interpolation_points", 30);
+  min_flight_altitude_ = this->declare_parameter<double>("min_flight_altitude", 2.0);
+  safety_radius_m_ = this->declare_parameter<double>("safety_radius_m", 1.0);
+  astar_max_expansions_ = this->declare_parameter<int>("astar_max_expansions", 120000);
+  astar_search_margin_vox_ = this->declare_parameter<int>("astar_search_margin_vox", 10);
+  use_diagonal_moves_ = this->declare_parameter<bool>("use_diagonal_moves", true);
+  planner_method_ = this->declare_parameter<std::string>("planner_method", "astar");
+  setup_interfaces();
+}
+
+void PathPlannerNode::setup_interfaces() {
+  odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
     "/current_state_est", 10,
-    [this](nav_msgs::msg::Odometry::SharedPtr m){ odom_ = m; });
+    std::bind(&PathPlannerNode::on_odometry, this, std::placeholders::_1));
 
-  goal_sub_ = create_subscription<geometry_msgs::msg::PoseStamped>(
-    "goal_pose", 10,
+  goal_sub_ = this->create_subscription<geometry_msgs::msg::PoseStamped>(
+    "/planning/goal", 10,
     std::bind(&PathPlannerNode::on_goal, this, std::placeholders::_1));
 
-  octomap_sub_ = create_subscription<octomap_msgs::msg::Octomap>(
-    "/octomap", 10,
-    std::bind(&PathPlannerNode::on_octomap, this, std::placeholders::_1));
+  map_sub_ = this->create_subscription<utils::msg::GlobalMap>(
+    "/mapping/global_map", 10,
+    std::bind(&PathPlannerNode::on_global_map, this, std::placeholders::_1));
 
-  path_pub_   = create_publisher<nav_msgs::msg::Path>("path", 10);
-  status_pub_ = create_publisher<std_msgs::msg::String>("planner_status", 10);
-
-  RCLCPP_INFO(get_logger(), "path_planner_node ready  (res=%.2f, margin=%.2f)", resolution_, safety_margin_);
+  path_pub_ = this->create_publisher<nav_msgs::msg::Path>("/planning/path", 10);
+  status_pub_ = this->create_publisher<std_msgs::msg::String>("/planning/status", 10);
 }
 
-// OctoMap callback
+void PathPlannerNode::on_odometry(const nav_msgs::msg::Odometry::SharedPtr msg) {
+  latest_odom_ = *msg;
+}
 
-void PathPlannerNode::on_octomap(const octomap_msgs::msg::Octomap::SharedPtr msg)
-{
-  auto *tree = dynamic_cast<octomap::OcTree*>(octomap_msgs::fullMsgToMap(*msg));
-  if (!tree) return;
-
-  resolution_ = tree->getResolution();
-  int margin  = std::max(1, (int)std::ceil(safety_margin_ / resolution_));
-
-  // Collect raw occupied voxels first
-  std::vector<Voxel> raw;
-  for (auto it = tree->begin_leafs(); it != tree->end_leafs(); ++it) {
-    if (tree->isNodeOccupied(*it)) {
-      raw.push_back({(int)std::round(it.getX() / resolution_),
-                     (int)std::round(it.getY() / resolution_),
-                     (int)std::round(it.getZ() / resolution_)});
-    }
+void PathPlannerNode::on_global_map(const utils::msg::GlobalMap::SharedPtr msg) {
+  map_valid_ = msg->valid;
+  map_resolution_ = msg->resolution > 1e-6f ? static_cast<double>(msg->resolution) : 0.5;
+  occupied_voxels_.clear();
+  occupied_voxels_.reserve(msg->occupied_ix.size());
+  for (size_t i = 0; i < msg->occupied_ix.size(); ++i) {
+    occupied_voxels_.insert(pack_key(msg->occupied_ix[i], msg->occupied_iy[i], msg->occupied_iz[i]));
   }
-  delete tree;
-
-  // expand every obstacle voxel by safety margin
-  obstacles_.clear();
-  for (auto & v : raw) {
-    for (int dx = -margin; dx <= margin; ++dx)
-      for (int dy = -margin; dy <= margin; ++dy)
-        for (int dz = -margin; dz <= margin; ++dz)
-          obstacles_.insert(vkey(v.x+dx, v.y+dy, v.z+dz));
-  }
-
-  map_ready_ = true;
-  RCLCPP_INFO_THROTTLE(get_logger(), *get_clock(), 5000,
-    "OctoMap: %zu raw -> %zu inflated voxels", raw.size(), obstacles_.size());
+  map_has_occupancy_ = !occupied_voxels_.empty();
 }
 
-// Goal callback
-
-void PathPlannerNode::on_goal(const geometry_msgs::msg::PoseStamped::SharedPtr msg)
-{
-  geometry_msgs::msg::Point start;
-  if (odom_) {
-    start = odom_->pose.pose.position;
-  } else {
-    start = msg->pose.position; // no odom yet, degenerate path
-  }
-
-  auto path = (map_ready_ && !obstacles_.empty())
-    ? plan_astar(start, msg->pose.position)
-    : plan_straight_line(start, msg->pose.position);
-
-  path_pub_->publish(path);
-
-  std_msgs::msg::String s;
-  s.data = "Path: " + std::to_string(path.poses.size()) + " pts";
-  status_pub_->publish(s);
+PathPlannerNode::VoxelCoord PathPlannerNode::world_to_voxel(const geometry_msgs::msg::Point & p) const {
+  VoxelCoord out;
+  out.x = static_cast<int>(std::floor(p.x / map_resolution_));
+  out.y = static_cast<int>(std::floor(p.y / map_resolution_));
+  out.z = static_cast<int>(std::floor(p.z / map_resolution_));
+  return out;
 }
 
-// A* planner
-
-PathPlannerNode::Voxel PathPlannerNode::from_key(int64_t k)
-{
-  auto sign = [](int v){ return (v & 0x100000) ? (v | ~0x1FFFFF) : v; };
-  return { sign((int)((k>>42)&0x1FFFFF)),
-           sign((int)((k>>21)&0x1FFFFF)),
-           sign((int)( k     &0x1FFFFF)) };
-}
-
-PathPlannerNode::Voxel PathPlannerNode::to_voxel(const geometry_msgs::msg::Point & p) const
-{
-  return { (int)std::round(p.x/resolution_),
-           (int)std::round(p.y/resolution_),
-           (int)std::round(p.z/resolution_) };
-}
-
-geometry_msgs::msg::Point PathPlannerNode::to_world(const Voxel & v) const
-{
+geometry_msgs::msg::Point PathPlannerNode::voxel_to_world_center(const VoxelCoord & v) const {
   geometry_msgs::msg::Point p;
-  p.x = v.x * resolution_;
-  p.y = v.y * resolution_;
-  p.z = v.z * resolution_;
+  p.x = (static_cast<double>(v.x) + 0.5) * map_resolution_;
+  p.y = (static_cast<double>(v.y) + 0.5) * map_resolution_;
+  p.z = (static_cast<double>(v.z) + 0.5) * map_resolution_;
   return p;
 }
 
-nav_msgs::msg::Path PathPlannerNode::plan_astar(
-  const geometry_msgs::msg::Point & start_pt,
-  const geometry_msgs::msg::Point & goal_pt)
-{
-  Voxel s = to_voxel(start_pt), g = to_voxel(goal_pt);
+bool PathPlannerNode::is_occupied(const VoxelCoord & voxel) const {
+  if (!map_has_occupancy_) {
+    return false;
+  }
 
-  // Euclidean heuristic
-  auto h = [&](int64_t k) -> double {
-    Voxel v = from_key(k);
-    double dx=v.x-g.x, dy=v.y-g.y, dz=v.z-g.z;
-    return std::sqrt(dx*dx+dy*dy+dz*dz);
-  };
-
-  // Priority queue: (f-score, key)
-  using Entry = std::pair<double, int64_t>;
-  std::priority_queue<Entry, std::vector<Entry>, std::greater<>> pq;
-
-  std::unordered_map<int64_t, double>  g_cost;
-  std::unordered_map<int64_t, int64_t> parent;
-
-  int64_t sk = vkey(s), gk = vkey(g);
-  g_cost[sk] = 0.0;
-  pq.push({h(sk), sk});
-
-  int expanded = 0;
-  bool found = false;
-
-  while (!pq.empty() && expanded < max_expansions_) {
-    auto [f, ck] = pq.top(); pq.pop();
-
-    if (ck == gk) { found = true; break; }
-
-    Voxel cur = from_key(ck);
-    double cg = g_cost[ck];
-    ++expanded;
-
-    // 26-connected neighbors
-    for (int dx=-1; dx<=1; ++dx)
-    for (int dy=-1; dy<=1; ++dy)
-    for (int dz=-1; dz<=1; ++dz) {
-      if (dx==0 && dy==0 && dz==0) continue;
-      Voxel nb{cur.x+dx, cur.y+dy, cur.z+dz};
-      if (blocked(nb)) continue;
-
-      double ng = cg + std::sqrt(dx*dx+dy*dy+dz*dz);
-      int64_t nk = vkey(nb);
-      if (!g_cost.count(nk) || ng < g_cost[nk]) {
-        g_cost[nk] = ng;
-        parent[nk] = ck;
-        pq.push({ng + h(nk), nk});
+  const int inflate_vox = std::max(0, static_cast<int>(std::ceil(safety_radius_m_ / map_resolution_)));
+  for (int dx = -inflate_vox; dx <= inflate_vox; ++dx) {
+    for (int dy = -inflate_vox; dy <= inflate_vox; ++dy) {
+      for (int dz = -inflate_vox; dz <= inflate_vox; ++dz) {
+        if ((dx * dx + dy * dy + dz * dz) > (inflate_vox * inflate_vox)) {
+          continue;
+        }
+        const int64_t key = pack_key(voxel.x + dx, voxel.y + dy, voxel.z + dz);
+        if (occupied_voxels_.find(key) != occupied_voxels_.end()) {
+          return true;
+        }
       }
     }
   }
-
-  // Reconstruct path
-  nav_msgs::msg::Path path;
-  path.header.stamp = now();
-  path.header.frame_id = "world";
-
-  if (found) {
-    std::vector<Voxel> voxels;
-    for (int64_t k = gk; parent.count(k); k = parent[k])
-      voxels.push_back(from_key(k));
-    voxels.push_back(s);
-    std::reverse(voxels.begin(), voxels.end());
-
-    // keep every waypoint_step_-th voxel + last
-    for (size_t i = 0; i < voxels.size(); i += waypoint_step_) {
-      geometry_msgs::msg::PoseStamped ps;
-      ps.header = path.header;
-      ps.pose.position = to_world(voxels[i]);
-      ps.pose.orientation.w = 1.0;
-      path.poses.push_back(ps);
-    }
-    // Always include the final goal
-    if (!path.poses.empty()) {
-      auto & last = path.poses.back().pose.position;
-      auto gw = to_world(voxels.back());
-      if (last.x != gw.x || last.y != gw.y || last.z != gw.z) {
-        geometry_msgs::msg::PoseStamped ps;
-        ps.header = path.header;
-        ps.pose.position = gw;
-        ps.pose.orientation.w = 1.0;
-        path.poses.push_back(ps);
-      }
-    }
-
-    RCLCPP_INFO(get_logger(), "A* path: %zu waypoints, %d expanded", path.poses.size(), expanded);
-  } else {
-    RCLCPP_WARN(get_logger(), "A* failed (%d expanded), falling back to straight line", expanded);
-    return plan_straight_line(start_pt, goal_pt);
-  }
-
-  return path;
+  return false;
 }
 
-nav_msgs::msg::Path PathPlannerNode::plan_straight_line(
-  const geometry_msgs::msg::Point & start,
-  const geometry_msgs::msg::Point & goal)
+std::optional<PathPlannerNode::VoxelCoord> PathPlannerNode::find_nearest_free(
+  const VoxelCoord & start, int max_radius) const
 {
-  nav_msgs::msg::Path path;
-  path.header.stamp = now();
-  path.header.frame_id = "world";
-
-  const int N = 20;
-  for (int i = 0; i <= N; ++i) {
-    double t = (double)i / N;
-    geometry_msgs::msg::PoseStamped ps;
-    ps.header = path.header;
-    ps.pose.position.x = start.x + t * (goal.x - start.x);
-    ps.pose.position.y = start.y + t * (goal.y - start.y);
-    ps.pose.position.z = start.z + t * (goal.z - start.z);
-    ps.pose.orientation.w = 1.0;
-    path.poses.push_back(ps);
+  if (!is_occupied(start)) {
+    return start;
   }
 
-  RCLCPP_INFO(get_logger(), "Straight-line path: %zu waypoints", path.poses.size());
-  return path;
+  for (int r = 1; r <= max_radius; ++r) {
+    for (int dx = -r; dx <= r; ++dx) {
+      for (int dy = -r; dy <= r; ++dy) {
+        for (int dz = -r; dz <= r; ++dz) {
+          if (std::max({std::abs(dx), std::abs(dy), std::abs(dz)}) != r) {
+            continue;
+          }
+          VoxelCoord cand{start.x + dx, start.y + dy, start.z + dz};
+          const geometry_msgs::msg::Point wp = voxel_to_world_center(cand);
+          if (wp.z < min_flight_altitude_) {
+            continue;
+          }
+          if (!is_occupied(cand)) {
+            return cand;
+          }
+        }
+      }
+    }
+  }
+  return std::nullopt;
+}
+
+std::vector<PathPlannerNode::VoxelCoord> PathPlannerNode::run_astar(
+  const VoxelCoord & start, const VoxelCoord & goal) const
+{
+  struct OpenNode {
+    int64_t key;
+    double f;
+    double g;
+  };
+  struct CompareNode {
+    bool operator()(const OpenNode & a, const OpenNode & b) const { return a.f > b.f; }
+  };
+
+  auto heuristic = [](const VoxelCoord & a, const VoxelCoord & b) {
+      const double dx = static_cast<double>(a.x - b.x);
+      const double dy = static_cast<double>(a.y - b.y);
+      const double dz = static_cast<double>(a.z - b.z);
+      return std::sqrt(dx * dx + dy * dy + dz * dz);
+    };
+
+  const int min_x = std::min(start.x, goal.x) - astar_search_margin_vox_;
+  const int max_x = std::max(start.x, goal.x) + astar_search_margin_vox_;
+  const int min_y = std::min(start.y, goal.y) - astar_search_margin_vox_;
+  const int max_y = std::max(start.y, goal.y) + astar_search_margin_vox_;
+  const int min_z = std::min(start.z, goal.z) - astar_search_margin_vox_;
+  const int max_z = std::max(start.z, goal.z) + astar_search_margin_vox_;
+
+  std::priority_queue<OpenNode, std::vector<OpenNode>, CompareNode> open;
+  std::unordered_map<int64_t, double> g_score;
+  std::unordered_map<int64_t, int64_t> came_from;
+
+  const int64_t start_key = pack_key(start.x, start.y, start.z);
+  const int64_t goal_key = pack_key(goal.x, goal.y, goal.z);
+  g_score[start_key] = 0.0;
+  open.push(OpenNode{start_key, heuristic(start, goal), 0.0});
+
+  int expansions = 0;
+  while (!open.empty() && expansions < astar_max_expansions_) {
+    const OpenNode current = open.top();
+    open.pop();
+    const auto score_it = g_score.find(current.key);
+    if (score_it == g_score.end() || current.g > score_it->second + 1e-9) {
+      continue;
+    }
+
+    if (current.key == goal_key) {
+      std::vector<VoxelCoord> path;
+      int64_t k = goal_key;
+      while (true) {
+        path.push_back(unpack_key(k));
+        if (k == start_key) {
+          break;
+        }
+        auto it = came_from.find(k);
+        if (it == came_from.end()) {
+          return {};
+        }
+        k = it->second;
+      }
+      std::reverse(path.begin(), path.end());
+      return path;
+    }
+
+    const VoxelCoord cv = unpack_key(current.key);
+    ++expansions;
+
+    for (int dx = -1; dx <= 1; ++dx) {
+      for (int dy = -1; dy <= 1; ++dy) {
+        for (int dz = -1; dz <= 1; ++dz) {
+          if (dx == 0 && dy == 0 && dz == 0) {
+            continue;
+          }
+          const int move_rank = std::abs(dx) + std::abs(dy) + std::abs(dz);
+          if (!use_diagonal_moves_ && move_rank != 1) {
+            continue;
+          }
+
+          VoxelCoord nv{cv.x + dx, cv.y + dy, cv.z + dz};
+          if (
+            nv.x < min_x || nv.x > max_x ||
+            nv.y < min_y || nv.y > max_y ||
+            nv.z < min_z || nv.z > max_z)
+          {
+            continue;
+          }
+
+          const geometry_msgs::msg::Point wp = voxel_to_world_center(nv);
+          if (wp.z < min_flight_altitude_) {
+            continue;
+          }
+
+          if (is_occupied(nv)) {
+            continue;
+          }
+
+          const int64_t nk = pack_key(nv.x, nv.y, nv.z);
+          const double step_cost = std::sqrt(
+            static_cast<double>(dx * dx + dy * dy + dz * dz));
+          const double tentative_g = current.g + step_cost;
+          auto it = g_score.find(nk);
+          if (it == g_score.end() || tentative_g < it->second) {
+            g_score[nk] = tentative_g;
+            came_from[nk] = current.key;
+            const double f = tentative_g + heuristic(nv, goal);
+            open.push(OpenNode{nk, f, tentative_g});
+          }
+        }
+      }
+    }
+  }
+
+  return {};
+}
+
+void PathPlannerNode::on_goal(const geometry_msgs::msg::PoseStamped::SharedPtr msg) {
+  publish_path_to_goal(*msg);
+}
+
+nav_msgs::msg::Path PathPlannerNode::build_straight_line_path(
+  const geometry_msgs::msg::PoseStamped & goal) const
+{
+  nav_msgs::msg::Path path_msg;
+  path_msg.header.stamp = this->now();
+  path_msg.header.frame_id = "world";
+
+  if (!latest_odom_.has_value()) {
+    return path_msg;
+  }
+
+  const auto & odom = latest_odom_.value();
+  const int n = std::max(2, interpolation_points_);
+  path_msg.poses.reserve(static_cast<size_t>(n));
+
+  const double x0 = odom.pose.pose.position.x;
+  const double y0 = odom.pose.pose.position.y;
+  const double z0 = odom.pose.pose.position.z;  // use actual position; goal clamped below
+  const double x1 = goal.pose.position.x;
+  const double y1 = goal.pose.position.y;
+  const double z1 = std::max(goal.pose.position.z, min_flight_altitude_);
+
+  for (int i = 0; i < n; ++i) {
+    const double t = static_cast<double>(i) / static_cast<double>(n - 1);
+    geometry_msgs::msg::PoseStamped pose;
+    pose.header = path_msg.header;
+    pose.pose.position.x = x0 + t * (x1 - x0);
+    pose.pose.position.y = y0 + t * (y1 - y0);
+    pose.pose.position.z = z0 + t * (z1 - z0);
+    pose.pose.orientation.w = 1.0;
+    path_msg.poses.push_back(pose);
+  }
+  return path_msg;
+}
+
+void PathPlannerNode::publish_path_to_goal(const geometry_msgs::msg::PoseStamped & goal) {
+  if (!latest_odom_.has_value()) {
+    RCLCPP_WARN(this->get_logger(), "Path planner has no odometry yet, skipping goal");
+    return;
+  }
+
+  nav_msgs::msg::Path path_msg;
+  std::string mode = "astar";
+
+  if (!map_valid_ || !map_has_occupancy_) {
+    path_msg = build_straight_line_path(goal);
+    mode = "fallback_straight";
+  } else {
+    geometry_msgs::msg::Point start_point = latest_odom_->pose.pose.position;
+    start_point.z = std::max(start_point.z, min_flight_altitude_);
+
+    geometry_msgs::msg::Point goal_point = goal.pose.position;
+    goal_point.z = std::max(goal_point.z, min_flight_altitude_);
+
+    std::optional<VoxelCoord> start_v = find_nearest_free(world_to_voxel(start_point), 5);
+    std::optional<VoxelCoord> goal_v = find_nearest_free(world_to_voxel(goal_point), 8);
+
+    if (!start_v.has_value() || !goal_v.has_value()) {
+      path_msg = build_straight_line_path(goal);
+      mode = "fallback_blocked_endpoints";
+    } else {
+      const std::vector<VoxelCoord> vox_path = run_astar(start_v.value(), goal_v.value());
+      if (vox_path.empty()) {
+        path_msg = build_straight_line_path(goal);
+        mode = "fallback_astar_failed";
+      } else {
+        path_msg.header.stamp = this->now();
+        path_msg.header.frame_id = "world";
+        path_msg.poses.reserve(vox_path.size() + 1);
+
+        for (const VoxelCoord & voxel : vox_path) {
+          geometry_msgs::msg::PoseStamped pose;
+          pose.header = path_msg.header;
+          pose.pose.position = voxel_to_world_center(voxel);
+          pose.pose.orientation.w = 1.0;
+          path_msg.poses.push_back(pose);
+        }
+
+        // Ensure last path point exactly matches the high-level goal.
+        geometry_msgs::msg::PoseStamped final_pose;
+        final_pose.header = path_msg.header;
+        final_pose.pose = goal.pose;
+        final_pose.pose.position.z = std::max(final_pose.pose.position.z, min_flight_altitude_);
+        path_msg.poses.push_back(final_pose);
+      }
+    }
+  }
+
+  path_pub_->publish(path_msg);
+
+  std_msgs::msg::String status;
+  std::ostringstream ss;
+  ss << "path_published points=" << path_msg.poses.size()
+     << " map_valid=" << (map_valid_ ? "true" : "false")
+     << " occupancy=" << (map_has_occupancy_ ? "true" : "false")
+     << " method=" << planner_method_
+     << " mode=" << mode;
+  status.data = ss.str();
+  status_pub_->publish(status);
 }
 
 }  // namespace path_planner
 
-int main(int argc, char ** argv)
-{
+int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<path_planner::PathPlannerNode>());
+  auto node = std::make_shared<path_planner::PathPlannerNode>();
+  rclcpp::spin(node);
   rclcpp::shutdown();
   return 0;
 }

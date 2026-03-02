@@ -47,6 +47,7 @@ private:
   bool have_trajectory_{false};
   trajectory_msgs::msg::MultiDOFJointTrajectory active_traj_;
   rclcpp::Time traj_start_time_;
+  rclcpp::Time node_start_time_;
 
   bool have_odom_{false};
   nav_msgs::msg::Odometry latest_odom_;

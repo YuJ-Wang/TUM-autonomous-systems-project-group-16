@@ -26,9 +26,11 @@ def generate_launch_description():
                 config_file,
                 {'use_sim_time': use_sim_time},
             ],
-            # Topic wiring:
-            #   path                (Path)                         <- path_planner
-            #   command/trajectory  (MultiDOFJointTrajectory)      -> controller
-            #   trajectory_status   (String)                       -> status output
+            remappings=[
+                # Receive planned path from path_planner
+                ('path', '/planning/path'),
+                # Publish to /planning/trajectory so controller_interface can sample it
+                ('command/trajectory', '/planning/trajectory'),
+            ],
         ),
     ])

@@ -7,6 +7,7 @@ endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(ament_cmake REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
@@ -15,6 +16,7 @@ find_package(std_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
+find_package(visualization_msgs REQUIRED)
 find_package(utils REQUIRED)
 
 include_directories(include)
@@ -27,7 +29,7 @@ ament_target_dependencies(
   rclcpp geometry_msgs nav_msgs sensor_msgs std_msgs
   tf2 tf2_ros tf2_geometry_msgs utils
 )
-ament_target_dependencies(global_map_publisher_node rclcpp std_msgs utils)
+ament_target_dependencies(global_map_publisher_node rclcpp sensor_msgs std_msgs visualization_msgs utils ament_index_cpp)
 
 install(TARGETS
   voxel_grid_mapper_node

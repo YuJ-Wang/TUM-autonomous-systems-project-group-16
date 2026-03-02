@@ -1,10 +1,13 @@
 voxel_grid_mapper_node:
   ros__parameters:
     resolution: 0.5
-    frame_id: "world"
+    frame_id: world
     point_stride: 8
-    serialization_voxel_limit: 20000   # TODO: tune
+    serialization_voxel_limit: 150000
     min_frontier_altitude_m: 2.0
     max_frontier_altitude_m: 35.0
-    frontier_republish_distance_m: 3.0  # TODO: tune
-    frontier_x_bias: 0.35               # TODO: tune
+    frontier_republish_distance_m: 1.5
+    frontier_x_bias: 2.0
+
+global_map_publisher_node:
+  ros__parameters: {}

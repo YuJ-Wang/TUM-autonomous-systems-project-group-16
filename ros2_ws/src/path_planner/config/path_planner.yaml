@@ -1,6 +1,9 @@
 path_planner_node:
   ros__parameters:
-    map_resolution: 0.15        # must match perception octomap resolution
-    safety_margin: 0.5          # inflate obstacles by this [m]
-    max_expansions: 100000      # A* budget
-    waypoint_step: 3            # keep every N-th voxel in output path
+    interpolation_points: 30
+    min_flight_altitude: 2.0
+    safety_radius_m: 0.8
+    astar_max_expansions: 500000
+    astar_search_margin_vox: 15
+    use_diagonal_moves: true
+    planner_method: astar

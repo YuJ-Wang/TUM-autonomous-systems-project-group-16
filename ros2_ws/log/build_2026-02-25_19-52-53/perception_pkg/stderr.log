@@ -1,3 +1,0 @@
-gmake[2]: *** [CMakeFiles/lantern_detector.dir/build.make:76: CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o] Interrupt
-gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/lantern_detector.dir/all] Interrupt
-gmake: *** [Makefile:146: all] Interrupt

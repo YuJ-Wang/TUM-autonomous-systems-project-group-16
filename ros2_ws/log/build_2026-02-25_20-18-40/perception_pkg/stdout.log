@@ -1,4 +1,0 @@
-[ 33%] Built target depth_to_pointcloud
-[ 50%] Building CXX object CMakeFiles/lantern_detector.dir/src/lantern_detector.cpp.o
-[ 83%] Built target pointcloud_to_octomap
-Linking CXX executable lantern_detector

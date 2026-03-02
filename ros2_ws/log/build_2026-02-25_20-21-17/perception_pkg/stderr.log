@@ -1,8 +1,0 @@
-[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:[m[K In member function ‘[01m[Kstd::vector<LanternDetectorNode::LanternDetection> LanternDetectorNode::[01;32m[KdetectLanterns[m[K(const cv::Mat&, cv::Mat&)[m[K’:
-[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:148:73:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<LanternDetectorNode::LanternDetection>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
-  148 |         for (size_t i = 0; i < color_ranges.size() && [01;35m[Kdetections.size() < max_lanterns_[m[K; ++i) {
-      |                                                       [01;35m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
-[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:[m[K In member function ‘[01m[Kvoid LanternDetectorNode::[01;32m[KpublishDetections[m[K(const std::vector<LanternDetection>&, const std_msgs::msg::Header&)[m[K’:
-[01m[K/home/jiacheng/autonomoussystems2025/ros2_ws/src/perception_pkg/src/lantern_detector.cpp:204:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kheader[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
-  204 |                           [01;35m[Kconst std_msgs::msg::Header& header[m[K)
-      |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K

@@ -12,6 +12,8 @@ from launch.substitutions import PathJoinSubstitution
 
 def generate_launch_description():
     # Launch configs (ROS1 <arg> equivalents)
+    start_simulator = LaunchConfiguration("start_simulator")
+    simulator_binary = LaunchConfiguration("simulator_binary")
     load_params = LaunchConfiguration("load_params")
     corrupt_state_estimate = LaunchConfiguration("corrupt_state_estimate")
 
@@ -24,6 +26,8 @@ def generate_launch_description():
 
     # Declare args
     declared_args = [
+        DeclareLaunchArgument("start_simulator", default_value="true"),
+        DeclareLaunchArgument("simulator_binary", default_value="Simulation.x86_64"),
         DeclareLaunchArgument("load_params", default_value="true"),
         DeclareLaunchArgument("corrupt_state_estimate", default_value="true"),
         DeclareLaunchArgument("right_image_topic", default_value="/realsense/rgb/right_image_raw"),
@@ -54,8 +58,9 @@ def generate_launch_description():
     # Nodes
     simulation_node = Node(
         package="simulation",
-        executable="Simulation.x86_64",
+        executable=simulator_binary,
         name="Simulation",
+        condition=IfCondition(start_simulator),
         output="screen",
     )
 
@@ -110,36 +115,29 @@ def generate_launch_description():
         Node(
             package="tf2_ros",
             executable="static_transform_publisher",
-            name="sim_true_body",
-            arguments=["0", "0", "0", "0", "0", "0", "/Quadrotor/TrueState", "/true_body"],
-            output="screen",
-        ),
-        Node(
-            package="tf2_ros",
-            executable="static_transform_publisher",
             name="sim_rgb_camera",
-            arguments=["0", "-0.05", "0", "0", "0", "0", "/camera", "/Quadrotor/RGBCameraLeft"],
+            arguments=["0", "-0.05", "0", "0", "0", "0", "camera", "Quadrotor/RGBCameraLeft"],
             output="screen",
         ),
         Node(
             package="tf2_ros",
             executable="static_transform_publisher",
             name="sim_depth_camera",
-            arguments=["0", "0", "0", "0", "0", "0", "/depth_camera", "/Quadrotor/Sensors/DepthCamera"],
+            arguments=["0", "0", "0", "0", "0", "0", "depth_camera", "Quadrotor/Sensors/DepthCamera"],
             output="screen",
         ),
         Node(
             package="tf2_ros",
             executable="static_transform_publisher",
             name="sim_right_camera",
-            arguments=["0", "0.05", "0", "0", "0", "0", "/camera", "/Quadrotor/RGBCameraRight"],
+            arguments=["0", "0.05", "0", "0", "0", "0", "camera", "Quadrotor/RGBCameraRight"],
             output="screen",
         ),
         Node(
             package="tf2_ros",
             executable="static_transform_publisher",
             name="camera_to_body",
-            arguments=["0", "0", "0", "0", "0", "0", "/true_body", "/camera"],
+            arguments=["0", "0", "0", "0", "0", "0", "true_body", "camera"],
             output="screen",
         ),
         Node(
@@ -147,7 +145,7 @@ def generate_launch_description():
             executable="static_transform_publisher",
             name="depth_camera_to_body",
             # Camera 30cm forward of body: x=0.3, y=0, z=0, roll=0, pitch=0, yaw=0
-            arguments=["0.3", "0", "0", "0", "0", "0", "/true_body", "/depth_camera"],
+            arguments=["0.3", "0", "0", "0", "0", "0", "true_body", "depth_camera"],
             output="screen",
         ),
     ]
