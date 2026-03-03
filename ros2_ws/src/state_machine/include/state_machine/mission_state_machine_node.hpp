@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <deque>
 
 #include <rclcpp/rclcpp.hpp>
 #include <geometry_msgs/msg/point.hpp>
@@ -47,6 +48,10 @@ private:
   bool goal_reached() const;
   std::string state_to_string(MissionState state) const;
   void advance_waypoint(std::vector<Waypoint> & list, size_t & index, MissionState next_state);
+  void maybe_publish_lantern_summary(uint32_t previous_count, uint32_t new_count,
+    const geometry_msgs::msg::Point * latest_position);
+  void flush_pending_lantern_summaries();
+  void append_event_log(const std::string & text) const;
 
   void on_odometry(const nav_msgs::msg::Odometry::SharedPtr msg);
   void on_lantern_poses(const utils::msg::LanternPoseArray::SharedPtr msg);
@@ -62,6 +67,7 @@ private:
   rclcpp::Subscription<utils::msg::GlobalMap>::SharedPtr map_sub_;
   rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr goal_pub_;
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr state_pub_;
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr lantern_summary_pub_;
   rclcpp::Service<utils::srv::SetMissionMode>::SharedPtr set_mode_srv_;
   rclcpp::TimerBase::SharedPtr timer_;
 
@@ -70,6 +76,7 @@ private:
   std::vector<Waypoint> explore_waypoints_;  // emergency fallback only
   size_t entrance_index_{0};
   size_t explore_index_{0};
+  bool manual_hold_active_{false};
 
   bool have_odom_{false};
   bool have_home_{false};
@@ -78,6 +85,7 @@ private:
   bool goal_active_{false};
   geometry_msgs::msg::Point home_position_;
   uint32_t confirmed_lanterns_{0};
+  uint32_t announced_lanterns_{0};
   bool map_valid_{false};
 
   geometry_msgs::msg::Point frontier_goal_;
@@ -108,6 +116,7 @@ private:
   bool land_started_{false};
 
   rclcpp::Time last_goal_pub_time_;
+  rclcpp::Time last_lantern_summary_time_;
   rclcpp::Time mission_start_time_;
   bool mission_started_{false};
   bool mission_summary_reported_{false};
@@ -119,6 +128,9 @@ private:
   double explore_fallback_wp_timeout_s_{90.0};
   rclcpp::Time explore_fallback_wp_start_time_;
   bool explore_fallback_wp_started_{false};
+  double lantern_summary_cooldown_s_{2.0};
+  std::deque<std::string> pending_lantern_summaries_;
+  std::string event_log_path_{"statemachine_events.log"};
 };
 
 }  // namespace state_machine

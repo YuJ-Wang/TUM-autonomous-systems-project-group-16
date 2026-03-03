@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cmath>
+#include <fstream>
 #include <functional>
 #include <sstream>
 
@@ -21,10 +22,16 @@ MissionStateMachineNode::MissionStateMachineNode()
   land_timeout_s_ = this->declare_parameter<double>("land_timeout_s", 90.0);
   mission_hard_timeout_s_ = this->declare_parameter<double>("mission_hard_timeout_s", 1200.0);
   completion_grace_s_ = this->declare_parameter<double>("completion_grace_s", 2.0);
+  lantern_summary_cooldown_s_ = this->declare_parameter<double>("lantern_summary_cooldown_s", 2.0);
+  event_log_path_ = this->declare_parameter<std::string>("event_log_path", "statemachine_events.log");
 
   load_waypoints();
   setup_interfaces();
   last_goal_pub_time_ = this->now();
+  last_lantern_summary_time_ = rclcpp::Time(0, 0, this->get_clock()->get_clock_type());
+
+  // 每次启动都重置状态机事件日志，避免不同仿真轮次混在一起。
+  std::ofstream reset_log(event_log_path_, std::ios::trunc);
 }
 
 void MissionStateMachineNode::setup_interfaces() {
@@ -47,6 +54,8 @@ void MissionStateMachineNode::setup_interfaces() {
 
   goal_pub_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("/planning/goal", 10);
   state_pub_ = this->create_publisher<std_msgs::msg::String>("/mission/state", 10);
+  lantern_summary_pub_ = this->create_publisher<std_msgs::msg::String>(
+    "/statemachine/lantern_summary", 10);
 
   set_mode_srv_ = this->create_service<utils::srv::SetMissionMode>(
     "/mission/set_mode",
@@ -63,6 +72,9 @@ void MissionStateMachineNode::load_waypoints() {
   std::vector<double> entrance_flat = this->declare_parameter<std::vector<double>>(
     "entrance_waypoints",
     std::vector<double>{-38.0, 10.0, 10.0, -1.57, -55.0, 0.84, 15.0, -1.57});
+  std::vector<double> explore_flat = this->declare_parameter<std::vector<double>>(
+    "explore_waypoints",
+    std::vector<double>{});
 
   entrance_waypoints_.clear();
   constexpr size_t step = 4;
@@ -73,6 +85,30 @@ void MissionStateMachineNode::load_waypoints() {
     wp.z = entrance_flat[i + 2];
     wp.yaw = entrance_flat[i + 3];
     entrance_waypoints_.push_back(wp);
+  }
+
+  explore_waypoints_.clear();
+  // 如果 explore_waypoints 只给 x 值，则沿用当前旧配置的简化格式；如果按四元组给，则解析完整航点。
+  if (!explore_flat.empty()) {
+    if (explore_flat.size() % step == 0) {
+      for (size_t i = 0; i + step - 1 < explore_flat.size(); i += step) {
+        Waypoint wp;
+        wp.x = explore_flat[i];
+        wp.y = explore_flat[i + 1];
+        wp.z = explore_flat[i + 2];
+        wp.yaw = explore_flat[i + 3];
+        explore_waypoints_.push_back(wp);
+      }
+    } else {
+      for (double x_value : explore_flat) {
+        Waypoint wp;
+        wp.x = x_value;
+        wp.y = 0.0;
+        wp.z = std::max(cruise_altitude_, 5.0);
+        wp.yaw = -M_PI / 2.0;
+        explore_waypoints_.push_back(wp);
+      }
+    }
   }
 }
 
@@ -86,14 +122,26 @@ void MissionStateMachineNode::on_odometry(const nav_msgs::msg::Odometry::SharedP
 }
 
 void MissionStateMachineNode::on_lantern_poses(const utils::msg::LanternPoseArray::SharedPtr msg) {
+  const uint32_t previous_count = confirmed_lanterns_;
   confirmed_lanterns_ = msg->confirmed_count;
+  const geometry_msgs::msg::Point * latest_position = nullptr;
+  if (!msg->lanterns.empty()) {
+    latest_position = &msg->lanterns.back().pose.position;
+  }
+  maybe_publish_lantern_summary(previous_count, confirmed_lanterns_, latest_position);
 }
 
 void MissionStateMachineNode::on_legacy_lantern_poses(
   const geometry_msgs::msg::PoseArray::SharedPtr msg)
 {
+  const uint32_t previous_count = confirmed_lanterns_;
   const auto legacy_count = static_cast<uint32_t>(msg->poses.size());
   confirmed_lanterns_ = std::max(confirmed_lanterns_, legacy_count);
+  const geometry_msgs::msg::Point * latest_position = nullptr;
+  if (!msg->poses.empty()) {
+    latest_position = &msg->poses.back().position;
+  }
+  maybe_publish_lantern_summary(previous_count, confirmed_lanterns_, latest_position);
 }
 
 void MissionStateMachineNode::on_global_map(const utils::msg::GlobalMap::SharedPtr msg) {
@@ -133,6 +181,54 @@ void MissionStateMachineNode::publish_goal(const Waypoint & wp) {
   last_goal_pub_time_ = this->now();
 }
 
+void MissionStateMachineNode::append_event_log(const std::string & text) const {
+  std::ofstream event_log(event_log_path_, std::ios::app);
+  if (!event_log) {
+    return;
+  }
+  event_log << text << '\n';
+}
+
+void MissionStateMachineNode::maybe_publish_lantern_summary(
+  uint32_t previous_count, uint32_t new_count, const geometry_msgs::msg::Point * latest_position)
+{
+  if (new_count <= previous_count) {
+    return;
+  }
+
+  std::ostringstream payload;
+  payload << "count=" << new_count;
+  if (latest_position != nullptr) {
+    payload << ";x=" << latest_position->x
+            << ";y=" << latest_position->y
+            << ";z=" << latest_position->z;
+  }
+
+  pending_lantern_summaries_.push_back(payload.str());
+  append_event_log("[Lantern] " + payload.str());
+  flush_pending_lantern_summaries();
+}
+
+void MissionStateMachineNode::flush_pending_lantern_summaries() {
+  if (pending_lantern_summaries_.empty()) {
+    return;
+  }
+
+  const auto now = this->now();
+  if (last_lantern_summary_time_.nanoseconds() != 0) {
+    const double elapsed = (now - last_lantern_summary_time_).seconds();
+    if (elapsed < lantern_summary_cooldown_s_) {
+      return;
+    }
+  }
+
+  std_msgs::msg::String summary_msg;
+  summary_msg.data = pending_lantern_summaries_.front();
+  pending_lantern_summaries_.pop_front();
+  lantern_summary_pub_->publish(summary_msg);
+  last_lantern_summary_time_ = now;
+}
+
 std::string MissionStateMachineNode::state_to_string(MissionState state) const {
   switch (state) {
     case MissionState::INIT: return "INIT";
@@ -168,15 +264,25 @@ void MissionStateMachineNode::on_set_mode(
   std::string message;
 
   if (mode == "RETURN_HOME") {
+    manual_hold_active_ = false;
+    goal_active_ = false;
     state_ = MissionState::RETURN_HOME;
     return_started_ = false;
   } else if (mode == "LAND") {
+    manual_hold_active_ = false;
+    goal_active_ = false;
     state_ = MissionState::LAND;
     land_started_ = false;
   } else if (mode == "EXPLORE") {
+    manual_hold_active_ = false;
+    goal_active_ = false;
+    frontier_goal_valid_ = false;
+    explore_fallback_wp_started_ = false;
+    explore_index_ = 0;
     state_ = MissionState::EXPLORE;
     explore_timer_started_ = false;
   } else if (mode == "HOLD") {
+    manual_hold_active_ = true;
     Waypoint hold;
     hold.x = current_position_.x;
     hold.y = current_position_.y;
@@ -189,7 +295,7 @@ void MissionStateMachineNode::on_set_mode(
   }
 
   response->success = accepted;
-  response->active_mode = state_to_string(state_);
+  response->active_mode = manual_hold_active_ ? "HOLD" : state_to_string(state_);
   response->message = accepted ? "Mode accepted" : message;
 }
 
@@ -199,8 +305,16 @@ void MissionStateMachineNode::tick() {
   }
 
   std_msgs::msg::String state_msg;
-  state_msg.data = state_to_string(state_);
+  state_msg.data = manual_hold_active_ ? "HOLD" : state_to_string(state_);
   state_pub_->publish(state_msg);
+  flush_pending_lantern_summaries();
+
+  if (manual_hold_active_) {
+    if (goal_active_ && (this->now() - last_goal_pub_time_).seconds() > 2.0) {
+      publish_goal(active_goal_);
+    }
+    return;
+  }
 
   if (
     mission_started_ &&
@@ -295,6 +409,8 @@ void MissionStateMachineNode::tick() {
         explore_start_time_ = this->now();
         explore_timer_started_ = true;
         frontier_goal_valid_ = false;
+        explore_fallback_wp_started_ = false;
+        explore_index_ = 0;
         RCLCPP_INFO(this->get_logger(), "Cave exploration started. Frontier-based navigation active.");
       }
 
@@ -341,6 +457,24 @@ void MissionStateMachineNode::tick() {
         // Not yet at waypoint — re-publish to keep planner alive.
         publish_goal(active_goal_);
       } else if (!goal_active_ || goal_reached()) {
+        if (explore_index_ < explore_waypoints_.size()) {
+          Waypoint fallback_wp = explore_waypoints_[explore_index_++];
+          // 对只给 x 的旧配置做就地适配：用当前位置 y 保持在通道内。
+          if (std::abs(fallback_wp.y) < 1e-6) {
+            fallback_wp.y = current_position_.y;
+          }
+          if (fallback_wp.z < 1e-6) {
+            fallback_wp.z = std::max(current_position_.z, 5.0);
+          }
+          RCLCPP_INFO(this->get_logger(),
+            "EXPLORE: using configured fallback waypoint (%.1f, %.1f, %.1f)",
+            fallback_wp.x, fallback_wp.y, fallback_wp.z);
+          publish_goal(fallback_wp);
+          explore_fallback_wp_start_time_ = this->now();
+          explore_fallback_wp_started_ = true;
+          break;
+        }
+
         // No frontier available: autonomously push 20 m deeper into the cave from
         // the current estimated position.  The goal is computed from live odometry
         // (not a predefined coordinate), so this satisfies the "no hardcoded cave
