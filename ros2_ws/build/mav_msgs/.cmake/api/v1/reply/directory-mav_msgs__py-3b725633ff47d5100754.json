@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "mav_msgs__py",
+		"source" : "/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_msgs/mav_msgs__py"
+	}
+}

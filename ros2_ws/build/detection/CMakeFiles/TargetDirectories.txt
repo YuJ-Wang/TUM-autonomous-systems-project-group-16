@@ -1,0 +1,10 @@
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/uninstall.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/detection_uninstall.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/lantern_detector.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/test.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/edit_cache.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/rebuild_cache.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/list_install_components.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/install.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/install/local.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/detection/CMakeFiles/install/strip.dir

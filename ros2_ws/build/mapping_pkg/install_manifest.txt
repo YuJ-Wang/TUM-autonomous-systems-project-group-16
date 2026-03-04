@@ -1,0 +1,17 @@
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/config/octomap_params.yaml
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/launch/mapping.launch.py
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/ament_index/resource_index/package_run_dependencies/mapping_pkg
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/ament_index/resource_index/parent_prefix_path/mapping_pkg
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/environment/ament_prefix_path.sh
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/environment/ament_prefix_path.dsv
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/environment/path.sh
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/environment/path.dsv
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/local_setup.bash
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/local_setup.sh
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/local_setup.zsh
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/local_setup.dsv
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/package.dsv
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/ament_index/resource_index/packages/mapping_pkg
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/cmake/mapping_pkgConfig.cmake
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/cmake/mapping_pkgConfig-version.cmake
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/install/mapping_pkg/share/mapping_pkg/package.xml

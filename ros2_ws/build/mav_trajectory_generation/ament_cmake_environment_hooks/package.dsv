@@ -1,0 +1,4 @@
+source;share/mav_trajectory_generation/local_setup.bash
+source;share/mav_trajectory_generation/local_setup.dsv
+source;share/mav_trajectory_generation/local_setup.sh
+source;share/mav_trajectory_generation/local_setup.zsh

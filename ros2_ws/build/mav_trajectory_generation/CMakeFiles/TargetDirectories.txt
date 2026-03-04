@@ -1,0 +1,12 @@
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/uninstall.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/mav_trajectory_generation_uninstall.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/mav_trajectory_generation.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/polynomial_timing_evaluation.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/trajectory_sampler_node.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/test.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/edit_cache.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/rebuild_cache.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/list_install_components.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/install.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/install/local.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/mav_trajectory_generation/CMakeFiles/install/strip.dir

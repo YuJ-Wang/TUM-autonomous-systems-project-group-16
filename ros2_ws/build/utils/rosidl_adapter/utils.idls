@@ -1,0 +1,5 @@
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/utils/rosidl_adapter/utils:msg/LanternPose.idl
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/utils/rosidl_adapter/utils:msg/LanternPoseArray.idl
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/utils/rosidl_adapter/utils:msg/GlobalMap.idl
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/utils/rosidl_adapter/utils:srv/SetMissionMode.idl
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/utils/rosidl_adapter/utils:srv/SaveMap.idl

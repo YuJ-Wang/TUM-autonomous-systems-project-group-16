@@ -1,0 +1,7 @@
+{
+  "package_name": "statemachine_pkg",
+  "non_idl_tuples": [
+    "/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/src/statemachine_pkg:msg/Command.msg",
+    "/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/src/statemachine_pkg:msg/Answer.msg"
+  ]
+}

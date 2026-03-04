@@ -1,0 +1,13 @@
+{
+  "package_name": "statemachine_pkg",
+  "output_dir": "/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/statemachine_pkg/rosidl_generator_type_description/statemachine_pkg",
+  "idl_tuples": [
+    "/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/statemachine_pkg/rosidl_adapter/statemachine_pkg:msg/Command.idl",
+    "/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/statemachine_pkg/rosidl_adapter/statemachine_pkg:msg/Answer.idl"
+  ],
+  "include_paths": [
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "geometry_msgs:/opt/ros/jazzy/share/geometry_msgs",
+    "std_msgs:/opt/ros/jazzy/share/std_msgs"
+  ]
+}

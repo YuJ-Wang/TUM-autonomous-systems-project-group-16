@@ -1,0 +1,9 @@
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/uninstall.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/simulation_bridge_uninstall.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/test.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/edit_cache.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/rebuild_cache.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/list_install_components.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/install.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/install/local.dir
+/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/simulation_bridge/CMakeFiles/install/strip.dir

@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from utils/srv/SetMissionMode.srv
+// generated code does not contain a copyright notice
+
+
+module utils {
+  module srv {
+    struct SetMissionMode_Request {
+      string mode;
+
+      boolean force;
+    };
+    struct SetMissionMode_Response {
+      boolean success;
+
+      string active_mode;
+
+      string message;
+    };
+  };
+};

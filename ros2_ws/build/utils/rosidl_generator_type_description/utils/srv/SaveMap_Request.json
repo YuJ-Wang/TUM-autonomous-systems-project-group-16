@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "utils/srv/SaveMap_Request",
+      "fields": [
+        {
+          "name": "file_path",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "utils/srv/SaveMap_Request",
+      "hash_string": "RIHS01_a0dc195062c0c7ca29898817b7a5b0aeb67f5fac407922d15ea07d44ec2c76cf"
+    }
+  ]
+}

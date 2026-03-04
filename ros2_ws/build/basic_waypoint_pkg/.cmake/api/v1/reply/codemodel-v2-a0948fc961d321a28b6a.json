@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-4b7ce46a0dbe05c7d851.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "basic_waypoint_pkg",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "basic_waypoint_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basic_waypoint_node-523db3b08f20abe0bf5f.json",
+					"name" : "basic_waypoint_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "basic_waypoint_pkg_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-basic_waypoint_pkg_uninstall-bfa851e92e3a41c42f69.json",
+					"name" : "basic_waypoint_pkg_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-38479da1b6d18a56cda3.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/build/basic_waypoint_pkg",
+		"source" : "/home/wangyujia/Autonome_Systeme/new/autosys13/ros2_ws/src/basic_waypoint_pkg"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

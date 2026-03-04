@@ -1,0 +1,29 @@
+[  8%] [32mBuilding C object C/CMakeFiles/socket_o.dir/inet/libinetsocket.c.o[0m
+[  8%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/exception.cpp.o[0m
+[ 12%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/dgramoverstream.cpp.o[0m
+[ 16%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/framing.cpp.o[0m
+[ 20%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/inetbase.cpp.o[0m
+[ 25%] [32mBuilding C object C/CMakeFiles/socket_o.dir/unix/libunixsocket.c.o[0m
+[ 29%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/dgramclient.cpp.o[0m
+[ 33%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/select.cpp.o[0m
+[ 37%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/streamclient.cpp.o[0m
+[ 41%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/unixclientdgram.cpp.o[0m
+[ 45%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/unixdgram.cpp.o[0m
+[ 54%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/inetclientstream.cpp.o[0m
+[ 50%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/unixserverstream.cpp.o[0m
+[ 58%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/inetserverdgram.cpp.o[0m
+[ 62%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/inetclientdgram.cpp.o[0m
+[ 66%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/inetdgram.cpp.o[0m
+[ 70%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/inetserverstream.cpp.o[0m
+[ 75%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/socket.cpp.o[0m
+[ 75%] Built target socket_o
+[ 79%] [32m[1mLinking C static library libsocket_int.a[0m
+[ 83%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/unixbase.cpp.o[0m
+[ 87%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/unixclientstream.cpp.o[0m
+[ 87%] Built target socket_int
+[ 91%] [32m[1mLinking C shared library libsocket.so[0m
+[ 95%] [32mBuilding CXX object C++/CMakeFiles/socket++_o.dir/unixserverdgram.cpp.o[0m
+[ 95%] Built target socket
+[ 95%] Built target socket++_o
+[100%] [32m[1mLinking CXX shared library libsocket++.so[0m
+[100%] Built target socket++
