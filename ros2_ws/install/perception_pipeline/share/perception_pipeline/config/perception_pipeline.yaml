@@ -1,0 +1,23 @@
+semantic_camera_subscriber_node:
+  ros__parameters:
+    mask_b: 4
+    mask_g: 235
+    mask_r: 255
+    tolerance: 10
+
+depth_to_pointcloud_node:
+  ros__parameters:
+    use_semantic_mask: false
+    min_depth_m: 0.1
+    max_depth_m: 30.0
+
+object_detection_node:
+  ros__parameters:
+    mask_b: 4
+    mask_g: 235
+    mask_r: 255
+    tolerance: 10
+    min_depth_m: 0.1
+    max_depth_m: 30.0
+    dedup_radius_m: 8.0
+    min_points: 20

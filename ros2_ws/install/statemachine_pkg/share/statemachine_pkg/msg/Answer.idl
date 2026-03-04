@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from statemachine_pkg/msg/Answer.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Time.idl"
+
+module statemachine_pkg {
+  module msg {
+    struct Answer {
+      string node_name;
+
+      uint8 state;
+
+      string info;
+
+      builtin_interfaces::msg::Time timestamp;
+    };
+  };
+};

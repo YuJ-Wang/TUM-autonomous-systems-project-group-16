@@ -1,0 +1,9 @@
+path_planner_node:
+  ros__parameters:
+    interpolation_points: 30
+    min_flight_altitude: 2.0
+    safety_radius_m: 0.8
+    astar_max_expansions: 500000
+    astar_search_margin_vox: 15
+    use_diagonal_moves: true
+    planner_method: astar

@@ -1,5 +1,5 @@
 # ROS2 build artifacts
-ros2_ws/install/
+ros2_ws/install/simulation/
 ros2_ws/log/
 
 # Mission outputs

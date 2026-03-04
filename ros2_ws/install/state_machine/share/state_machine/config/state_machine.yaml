@@ -1,0 +1,28 @@
+mission_state_machine_node:
+  ros__parameters:
+    takeoff_altitude: 10.0
+    cruise_altitude: 10.0
+    land_altitude: 0.4
+    arrival_tolerance: 8.0
+    explore_timeout_s: 420.0
+    desired_lantern_count: 4
+    takeoff_timeout_s: 20.0
+    entrance_timeout_s: 60.0
+    return_timeout_s: 180.0
+    land_timeout_s: 120.0
+    mission_hard_timeout_s: 1200.0
+    completion_grace_s: 2.0
+    lantern_summary_cooldown_s: 2.0
+    event_log_path: "statemachine_events.log"
+    # 使用原 basic_waypoint_pkg 的固定进洞路径点，改成 state_machine 可直接消费的四元组格式：
+    # [x, y, z, yaw, ...]
+    # 这样 TO_CAVE_ENTRANCE 阶段会逐点推进，而不是只停在原先的两个入口点。
+    entrance_waypoints: [
+      -98.0, 11.2, 14.6, -1.57,
+      -128.5, 8.8, 18.4, -1.57,
+      -156.0, 11.0, 22.1, -1.57,
+      -205.0, 8.6, 24.3, -1.57,
+      -258.0, 10.7, 18.1, -1.57,
+      -324.0, 8.5, 15.2, -1.57
+    ]
+    explore_waypoints: [-80.0, -130.0, -200.0]

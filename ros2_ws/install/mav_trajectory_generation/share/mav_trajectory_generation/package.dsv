@@ -1,0 +1,11 @@
+source;share/mav_trajectory_generation/hook/cmake_prefix_path.ps1
+source;share/mav_trajectory_generation/hook/cmake_prefix_path.dsv
+source;share/mav_trajectory_generation/hook/cmake_prefix_path.sh
+source;share/mav_trajectory_generation/hook/ld_library_path_lib.ps1
+source;share/mav_trajectory_generation/hook/ld_library_path_lib.dsv
+source;share/mav_trajectory_generation/hook/ld_library_path_lib.sh
+source;share/mav_trajectory_generation/local_setup.bash
+source;share/mav_trajectory_generation/local_setup.dsv
+source;share/mav_trajectory_generation/local_setup.ps1
+source;share/mav_trajectory_generation/local_setup.sh
+source;share/mav_trajectory_generation/local_setup.zsh

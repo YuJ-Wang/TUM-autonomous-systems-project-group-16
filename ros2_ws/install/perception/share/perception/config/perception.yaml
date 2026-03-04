@@ -1,0 +1,14 @@
+light_detection_node:
+  ros__parameters:
+    semantic_image_topic: "/realsense/semantic/image_raw"
+    depth_image_topic: "/realsense/depth/image"
+    depth_info_topic: "/realsense/depth/camera_info"
+    target_frame: "world"
+    mask_b: 4
+    mask_g: 235
+    mask_r: 255
+    mask_tolerance: 0
+    min_valid_depth_m: 0.1
+    max_valid_depth_m: 50.0
+    min_mask_pixels: 30
+    unique_distance_m: 10.0
