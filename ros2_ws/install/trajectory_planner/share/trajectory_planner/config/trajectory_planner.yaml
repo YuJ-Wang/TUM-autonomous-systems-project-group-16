@@ -1,5 +1,0 @@
-trajectory_planner_node:
-  ros__parameters:
-    desired_speed: 2.0        # TODO: tune
-    min_segment_dt: 0.05
-    max_acceleration: 1.5     # TODO: tune

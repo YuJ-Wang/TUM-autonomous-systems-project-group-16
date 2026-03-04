@@ -1,6 +1,0 @@
-string mode
-bool force
----
-bool success
-string active_mode
-string message
